@@ -15,6 +15,7 @@
   <form>
     <input id="song-name" type="text">
     <button id="submit" type="submit">Submit</button>
+  </form>
   </body>
   <script type="text/javascript">
     // Variables
@@ -35,11 +36,12 @@
       event.preventDefault();
       var request = $("#song-name").val();
       console.log(request);
-      var queryURL = 'https://api.discogs.com/oauth/request_token/database/search?q='+request;
+      var queryURL = 'https://api.discogs.com/database/search?q='+request+'&key=JOwiPIVkZGKqzPMffeLo&secret=TTdaxTVwWBjataauUqtEjCGckNrSOmtk';
       $.ajax({
         url: queryURL,
         method: "GET"
       }).done(function(response) {
+        console.log(response);
       });
     }
 
