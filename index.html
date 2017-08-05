@@ -12,6 +12,9 @@
   crossorigin="anonymous"></script>
   </head>
   <body>
+  <form>
+    <input id="song-name" type="text">
+    <button id="submit" type="submit">Submit</button>
   </body>
   <script type="text/javascript">
     // Variables
@@ -29,13 +32,14 @@
     }
 
     function doAjax(){
-      var request = '';
-      var queryURL = 'https://api.discogs.com/oauth/request_token/database/search?q={query}&'+request;
+      event.preventDefault();
+      var request = $("#song-name").val();
+      console.log(request);
+      var queryURL = 'https://api.discogs.com/oauth/request_token/database/search?q='+request;
       $.ajax({
         url: queryURL,
         method: "GET"
       }).done(function(response) {
-        }
       });
     }
 
