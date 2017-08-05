@@ -18,7 +18,7 @@
 	  <div class="container-fluid">
 	    <!-- Brand and toggle get grouped for better mobile display -->
 	    <div class="navbar-header">
-	      <button id="burger" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	      <button id="burger" type="button" class="navbar-toggle collapsed" data-toggle="collapse">
 	        <span class="sr-only">Toggle navigation</span>
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
@@ -30,16 +30,17 @@
  
 	<div id="mySidenav" class="sidenav">
 	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-	  <a href="#">About</a>
-	  <a href="#">Services</a>
-	  <a href="#">Clients</a>
-	  <a href="#">Contact</a>
+	  <a href="#">Favorite Songs</a>
+    <div id="favorite-songs"></div>
+	  <a href="#">Recent Searches</a>
+    <div id="recent-searches"></div>
 	</div>
 
 	<div id="main">
 	  <h2>Sidenav Push Example</h2>
-	  <p>Click on the element below to open the side navigation menu, and push this content to the right.</p>
-	  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+	  <p>Click on the element below to open the side navigation menu, and push this content6 to the right.</p>
+	  <p style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</p>
+    <p style="font-size:30px;cursor:pointer" onclick="closeNav()">&#9776; close</p>
 	</div>
 
 	<!-- JavaScript -->

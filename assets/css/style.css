@@ -1,5 +1,7 @@
 body {
     font-family: "Lato", sans-serif;
+    background-color: #111;
+    color:white;
 }
 
 .sidenav {
@@ -9,17 +11,17 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: darkorange;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    padding-top: 10vh;
 }
 
 .sidenav a {
-    padding: 8px 8px 8px 32px;
+    padding: 1vh 2% 1vh 8%;
     text-decoration: none;
-    font-size: 2.5vw;
-    color: #818181;
+    font-size: 1.7vw;
+    color: white;
     display: block;
     transition: 0.3s;
 }
@@ -31,17 +33,11 @@ body {
 .sidenav .closebtn {
     position: absolute;
     top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+    right: 2%;
+    margin-left: 4%;
 }
 
 #main {
     transition: margin-left .5s;
     padding: 16px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
 }
