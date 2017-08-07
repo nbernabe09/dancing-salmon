@@ -2,22 +2,32 @@ var navIsOpen = false;
 
 // Functions
 function openNav() {
-    document.getElementById("mySidenav").style.width = "20%";
-    document.getElementById("main").style.marginLeft = "20%";
+  $("#mySidenav").css("width", "30%");
+  $("#main").css("marginLeft", "30%");
+  $("#leftTab").css("left", "30%");
+  navIsOpen=!navIsOpen;
 }
 
 function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft= "0";
+  $("#mySidenav").css("width", "0");
+  $("#main").css("marginLeft", "0");
+  $("#leftTab").css("left", "0");
+  navIsOpen=!navIsOpen;
 }
 
 // Buttons
-
 $("#burger").on("click", function() {
 	if (navIsOpen) {
 		closeNav();
 	} else {
 		openNav();
 	}
-	navIsOpen=!navIsOpen
+});
+
+$("#openLeftDash").on("click", function() {
+	if (navIsOpen) {
+		closeNav();
+	} else {
+		openNav();
+	}
 });
