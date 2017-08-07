@@ -4,6 +4,14 @@ body {
   color:white;
 }
 
+.navbar {
+  transition: .5s;
+}
+
+.navbar-default {
+  background-color: darkorange
+}
+
 .sidenav {
   height: 100%;
   width: 0;
@@ -47,8 +55,8 @@ body {
   position: fixed;
   z-index: 1;
   left: 0;
-  top: 50px;
-  width: 24px;
+  top: 7.5vh;
+  width: 3.75vh;
   transition: .5s;
   padding: 8px 5px;
   border: 3px solid #fff;
