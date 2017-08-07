@@ -26,7 +26,7 @@ function closeNav() {
 // 	}
 // });
 
-$("#openLeftDash").on("click", function() {
+$("#openLeftNav").on("click", function() {
 	if (navIsOpen) {
 		closeNav();
 	} else {
