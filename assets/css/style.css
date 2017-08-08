@@ -8,6 +8,10 @@ body {
   transition: .5s;
 }
 
+#projectName {
+  color: white;
+}
+
 .navbar-default {
   background-color: darkorange
 }
@@ -25,6 +29,10 @@ body {
   padding-top: 10vh;
 }
 
+.dropdown-menu {
+  background-color: darkorange;
+}
+
 #leftNav a {
   padding: 1vh 2% 1vh 8%;
   text-decoration: none;
@@ -34,8 +42,8 @@ body {
   transition: 0.3s;
 }
 
-#leftNav a:hover, .offcanvas a:focus{
-  color: #f1f1f1;
+#leftNav a:hover {
+  color: lightgrey;
 }
 
 #leftBurger {
@@ -53,7 +61,7 @@ body {
   position: fixed;
   z-index: 1;
   left: 0;
-  top: 7.5vh;
+  top: 7.75vh;
   width: 3.75vh;
   transition: .5s;
   padding: 8px 5px;
