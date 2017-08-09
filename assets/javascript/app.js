@@ -1,4 +1,5 @@
 var leftNavIsOpen = false;
+var rightNavIsOpen = false;
 
 // Functions
 function openLeftNav() {
@@ -17,14 +18,26 @@ function closeLeftNav() {
   leftNavIsOpen=!leftNavIsOpen;
 }
 
+function openRightNav() {
+  $("#rightNav").css("width", "20%");
+  $("#rightTab").css("right", "20%");
+  rightNavIsOpen=!rightNavIsOpen;
+}
+
+function closeRightNav() {
+  $("#rightNav").css("width", "0");
+  $("#rightTab").css("right", "0");
+  rightNavIsOpen=!rightNavIsOpen;
+}
+
 // Buttons
-// $("#burger").on("click", function() {
-// 	if (navIsOpen) {
-// 		closeNav();
-// 	} else {
-// 		openNav();
-// 	}
-// });
+$("#rightTab").on("click", function() {
+  if (rightNavIsOpen) {
+    closeRightNav();
+  } else {
+    openRightNav();
+  }
+});
 
 $("#leftTab").on("click", function() {
 	if (leftNavIsOpen) {
