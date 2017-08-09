@@ -1,3 +1,13 @@
+/*CSS Notes
+  color scheme {
+    dark grey: #313131;
+    grey: #6D5949;
+    grey-orange: #AA6C39;
+    orange: #FF7400;
+    dark orange: #E76900;
+  }
+*/
+
 body {
   font-family: "Lato", sans-serif;
   background-color: #313131;
@@ -23,13 +33,14 @@ body {
     margin-bottom: 0;
   }
 
-  #music-search {
-    width: 400px;
-  }
-
-  .btn-default {
+  .btn {
     background-color: #E76900;
     border-color: #313131;
+  }
+
+  .btn-default:hover {
+    background-color: #FF7400;
+    border-color: 
   }
 
 /*Search Bar*/
@@ -48,6 +59,10 @@ body {
 
   .search-line {
     padding:.1vh 2%;
+  }
+
+  #music-search {
+    width: 400px;
   }
 
   .dropdown-menu {
@@ -125,7 +140,6 @@ body {
     z-index: 1;
     left: 0;
     top: 75px;
-    width: 3.75vh;
     transition: .5s;
     padding: 8px 5px;
     border: 3px solid #fff;
@@ -142,7 +156,6 @@ body {
     z-index: 1;
     right: 0;
     top: 75px;
-    width: 3.75vh;
     transition: .5s;
     padding: 8px 5px;
     border: 3px solid #fff;
