@@ -28,7 +28,7 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #FF7400;
+  background-color: #E76900;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 10vh;
@@ -41,13 +41,13 @@ body {
   z-index: 1;
   top: 0;
   right: 0;
-  background-color: #FF7400;
+  background-color: #E76900;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 10vh;
 }
 
-#leftNav a, #rightNav a {
+#leftNav span, #rightNav a {
   padding: 1vh 2% 1vh 8%;
   text-decoration: none;
   font-size: 1.7vw;
@@ -56,7 +56,7 @@ body {
   transition: 0.3s;
 }
 
-#leftNav a:hover, #rightNav a:hover {
+#leftNav span:hover, #rightNav a:hover {
   color: black;
 }
 
@@ -83,7 +83,7 @@ body {
   border-left: none;
   border-radius: 0 10px 10px 0;
   box-shadow: 0 0 7px rgba(0, 0, 0, .6);
-  background: #FF7400;
+  background: #E76900;
 }
 
 #rightTab {
@@ -100,10 +100,30 @@ body {
   border-right: none;
   border-radius: 10px 0 0 10px;
   box-shadow: 0 0 7px rgba(0, 0, 0, .6);
-  background: #FF7400;
+  background: #E76900;
 }
 
 #searchBox {
   background-color: #E76900;
   border: 0;
 }
+
+#music-controls {
+  width: 400px;
+}
+
+.form-group {
+  width: 100%;
+  position: relative;
+}
+
+#searchBox {
+  width: 98%;
+}
+
+#search {
+/*  visibility: hidden;*/
+  font-size: 0px;
+  margin: 0;
+}
+

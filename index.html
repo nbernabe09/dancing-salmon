@@ -27,18 +27,20 @@
 	    </div>
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav navbar-right">
-          <form class="navbar-form navbar-left">
+          <form id="music-controls" class="navbar-form navbar-left" method="post">
 		        <div class="form-group">
 		          <input type="text" class="form-control" id="searchBox" placeholder="Music Search...">
+		          <a href="#" id="search" class="search-btn" type="submit">.</a>
+		          <div id="test"></div>
 		        </div>
 		      </form>
-		      <li><a class="glyphicon glyphicon-search"></a></li>
+		      <li><a class="glyphicon glyphicon-search search-btn"></a></li>
 	        <li><a class="glyphicon glyphicon-step-backward"></a></li>
-	        <li><a class="glyphicon glyphicon-play"></a></li>
+	        <li><a id="play-btn" class="glyphicon glyphicon-play"></a></li>
 	        <li><a class="glyphicon glyphicon-step-forward"></a></li>
-	        <li><a class="glyphicon glyphicon-volume-up"></a></li>
+<!-- 	        <li><a class="glyphicon glyphicon-volume-up"></a></li>
 	        <li><a class="glyphicon glyphicon-random"></a></li>
-	        <li><a class="glyphicon glyphicon-repeat"></a></li>
+	        <li><a class="glyphicon glyphicon-repeat"></a></li> -->
 	      </ul>
 	    </div>
 	  </div>
@@ -49,9 +51,9 @@
 	</ul>
 
 	<div id="leftNav">
-	  <a href="#">Favorite Songs</a>
-		<div id="favorite-songs"></div>
-		<a href="#">Recent Searches</a>
+	  <span>Top Songs</span>
+		<div id="top-songs"></div>
+		<span>Recent Searches</span>
 		<div id="recent-searches"></div>
 	</div>
 
@@ -72,5 +74,6 @@
 
 	<!-- JavaScript -->
 	<script type="text/javascript" src="assets/javascript/app.js"></script>
+	<script type="text/javascript" src="assets/javascript/java.js"></script>
 </body>
 </html>

@@ -46,3 +46,4 @@ $("#leftTab").on("click", function() {
 		openLeftNav();
 	}
 });
+
