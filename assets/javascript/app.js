@@ -5,6 +5,7 @@
 // Functions
 	function openLeftNav() {
 	  $("#leftNav").css("width", "20%");
+	  // $("#leftNav").css("min-width", "193px");
 	  $("#main").css("marginLeft", "20%");
 	  $("#leftTab").css("left", "20%");
 	  $("#navbar").css("marginLeft", "20%");
@@ -13,6 +14,7 @@
 
 	function closeLeftNav() {
 	  $("#leftNav").css("width", "0");
+	  // $("#leftNav").css("min-width", "0");
 	  $("#main").css("marginLeft", "0");
 	  $("#leftTab").css("left", "0");
 	  $("#navbar").css("marginLeft", "0");
@@ -56,6 +58,6 @@
 		}
 	});
 
-	$("#artistBurger").on("click", openArtNav)
+	$("#artistBurger").on("click", openArtNav);
 
-	$("#closeArtist").on("click", closeArtNav)
+	$("#closeArtist").on("click", closeArtNav);

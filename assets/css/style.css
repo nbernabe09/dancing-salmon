@@ -1,30 +1,58 @@
 /*CSS Notes
-  color scheme {
-    dark grey: #313131;
-    brown: #6D5949;
-    grey-orange: #AA6C39;
-    orange: #FF7400;
-    dark orange: #E76900;
+  Primary {
+    black: #202020;
+    brown: #655244;
+    faded-orange: #aa6a39;
+    dark orange: #ef6800;
+    orange: #ff6f00;
+  }
+
+  Secondary 1 {
+    black: #202020;
+    light-brown: #655944;
+    faded-yellow: #aa8339;
+    gold: #ef9d00;
+    dark-yellow: #ffa700;
+  }
+
+  Secondary 2 {
+    black: #202020;
+    purple: #634244;
+    faded-red: #a7383e;
+    red: #eb000c;
+    darkish-red: #fd000d;
+  }
+
+  Complement {
+    black: #141414;
+    blue-grey: #2a3e3d;
+    dark-aqua: #236863;
+    aqua: #009388;
+    light-aqua: #00dbcb;
   }
 */
 
 body {
   font-family: "Lato", sans-serif;
-  background-color: #313131;
-  color:white;
+  background-color: #202020;
+  color: #fff;
+  /*min-width: 965px;*/
 }
 
 /*Top Navbar*/
   #navbar {
+    margin-left: 0;
     transition: .5s;
-    color: #6D5949;
-    background-color: #FF7400;
+    color: #202020;
+    background-color: #ff6f00;
     padding: 10px 0 10px 0;
+    border-bottom: 2px solid #655244;
+    z-index: 20;
   }
 
   #projectName {
     font-size: 25px;
-    color: #6D5949;
+    color: #202020;
   }
 
   .form-group {
@@ -34,19 +62,25 @@ body {
   }
 
   .btn {
-    background-color: #E76900;
-    border-color: #313131;
+    background-color: #ef6800;
+    border-color: #655244;
+    color: #202020;
   }
 
   .btn-default:hover {
-    background-color: #FF7400;
-    border-color: 
+    background-color: #ef9d00;
+    border-color: #655944;
+  }
+
+  .btn-default:focus {
+    background-color: #ffa700; 
   }
 
 /*Search Bar*/
   #searchBox {
-    background-color: #E76900;
+    background-color: #ef6800;
     border: 0;
+    color: #202020;
   }
 
   .search-image {
@@ -66,38 +100,45 @@ body {
   }
 
   .dropdown-menu {
-    background-color: #FF7400;
+    background-color: #ff6f00;
   }
 
   #search {
-    background-color: #E76900;
+    background-color: #ef6800;
+    color: #202020;
     border: 0;
     top: 0;
   }
 
+  #search:hover {
+    cursor: pointer;
+    background-color: #ef9d00;
+  }
+
   #search-results {
     position: absolute;
-    bottom:-1;
+    padding: 2px 10px;
     left:0;
     width:100%;
     min-height:200px;
-    background-color: #AA6C39;
+    background-color: #141414;
     visibility: hidden;
-    border: 2px solid #6D5949;
+    border: 2px solid #2a3e3d;
     font-weight: bold;
     word-wrap: break-word;
-    color: #eee
+    color: #fff;
   }
 
 /*Side Nav*/
   #leftNav {
     height: 100%;
     width: 0;
+    /*min-width: 0;*/
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #E76900;
+    background-color: #a7383e;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 50px;
@@ -110,7 +151,7 @@ body {
     z-index: 1;
     top: 0;
     right: 0;
-    background-color: #E76900;
+    background-color: #aa8339;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 50px;
@@ -120,17 +161,17 @@ body {
     padding: 1vh 2% 1vh 8%;
     text-decoration: none;
     font-size: 1.7vw;
-    color: #6D5949;
+    color: #202020;
     display: block;
     transition: 0.3s;
   }
 
   #leftNav span:hover, #rightNav a:hover {
-    color: black;
+    color: #ef9d00;
   }
 
   #leftBurger, #rightBurger {
-    color: #313131;
+    color: #202020;
   }
 
   #leftTab {
@@ -146,7 +187,7 @@ body {
     border-left: none;
     border-radius: 0 10px 10px 0;
     box-shadow: 0 0 7px rgba(0, 0, 0, .6);
-    background: #E76900;
+    background: #a7383e;
   }
 
   #rightTab {
@@ -162,7 +203,7 @@ body {
     border-right: none;
     border-radius: 10px 0 0 10px;
     box-shadow: 0 0 7px rgba(0, 0, 0, .6);
-    background: #E76900;
+    background: #aa8339;
   }
 
 /*Artist Page*/
@@ -173,7 +214,7 @@ body {
       z-index: 10;
       top: 0;
       left: 0;
-      background-color: #6D5949;
+      background-color: #2a3e3d;
       overflow-x: hidden;
       transition: 0.5s;
       padding-top: 60px;
@@ -185,14 +226,14 @@ body {
       padding: 8px 8px 8px 32px;
       text-decoration: none;
       font-size: 25px;
-      color: black;
+      color: #fff;
       display: block;
       transition: 0.3s;
 
   }
 
   #artistPage a:hover {
-      color: #313131;
+      color: #00dbcb;
   }
 
   #artistPage #closeArtist {

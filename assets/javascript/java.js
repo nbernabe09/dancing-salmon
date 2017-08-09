@@ -1,9 +1,20 @@
 // Global Variables
   var playing = false;
   var debouncedAjax = _.debounce(doAjax, 400);
+  var resultsHidden = true;
 
 // Functions
-  function doAjax(){
+  function showResults() {
+    $("#search-results").css("visibility", "visible");
+    resultsHidden = false;
+  }
+
+    function hideResults() {
+    $("#search-results").css("visibility", "hidden");
+    resultsHidden = true;
+  }
+
+  function doAjax() {
     $("#search-results").empty();
     var songArray = [];
     var song = $("#searchBox").val();
@@ -59,10 +70,20 @@
     event.preventDefault();
     var searchText = $("#searchBox").val();
     if (searchText === "") {
+      resultsHidden = true;
       $("#search-results").css("visibility", "hidden");
     } else {
       event.preventDefault();
+      resultsHidden = false;
       $("#search-results").css("visibility", "visible");
       debouncedAjax();
+    }
+  });
+
+  $("#search").on("click", function () {
+    if (resultsHidden) {
+      showResults();
+    } else {
+      hideResults();
     }
   });
