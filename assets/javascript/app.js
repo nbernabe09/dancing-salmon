@@ -31,6 +31,14 @@
 	  rightNavIsOpen=!rightNavIsOpen;
 	}
 
+	function openArtNav() {
+    $("#artistPage").css("width", "100%");
+	}
+
+	function closeArtNav() {
+	  $("#artistPage").css("width", "0");
+	}
+
 // Buttons
 	$("#rightTab").on("click", function() {
 	  if (rightNavIsOpen) {
@@ -47,3 +55,7 @@
 			openLeftNav();
 		}
 	});
+
+	$("#artistBurger").on("click", openArtNav)
+
+	$("#closeArtist").on("click", closeArtNav)

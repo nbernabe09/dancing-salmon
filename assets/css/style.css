@@ -1,7 +1,7 @@
 /*CSS Notes
   color scheme {
     dark grey: #313131;
-    grey: #6D5949;
+    brown: #6D5949;
     grey-orange: #AA6C39;
     orange: #FF7400;
     dark orange: #E76900;
@@ -100,7 +100,7 @@ body {
     background-color: #E76900;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 10vh;
+    padding-top: 50px;
   }
 
   #rightNav {
@@ -113,10 +113,10 @@ body {
     background-color: #E76900;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 10vh;
+    padding-top: 50px;
   }
 
-  #leftNav span, #rightNav a {
+  #leftNav span, #rightNav a, #rightNav h5{
     padding: 1vh 2% 1vh 8%;
     text-decoration: none;
     font-size: 1.7vw;
@@ -163,6 +163,49 @@ body {
     border-radius: 10px 0 0 10px;
     box-shadow: 0 0 7px rgba(0, 0, 0, .6);
     background: #E76900;
+  }
+
+/*Artist Page*/
+  #artistPage {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      background-color: #6D5949;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+      text-align:center;
+      opacity: 0.95;
+  }
+
+  #artistPage a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: black;
+      display: block;
+      transition: 0.3s;
+
+  }
+
+  #artistPage a:hover {
+      color: #313131;
+  }
+
+  #artistPage #closeArtist {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+  }
+
+  #artistBurger {
+    font-size: 30px;
+    cursor: pointer;
   }
 
 #main {
