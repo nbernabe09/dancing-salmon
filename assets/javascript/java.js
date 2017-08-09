@@ -1,6 +1,6 @@
 var playing = false;
 
-$("#play-btn").on("click", function() {
+$("#musicPlay").on("click", function() {
 	if (playing) {
 		$("#play-btn").attr("class", "glyphicon glyphicon-play")
 	} else {

@@ -14,40 +14,31 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-default">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-	        <span class="sr-only">Toggle navigation</span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
-	      <a class="navbar-brand" href="#"><span id="projectName">Project 1</span></a>
-	    </div>
-	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <form id="music-controls" class="navbar-form navbar-left" method="post">
-	        <div class="form-group">
-	          <input type="text" class="form-control" id="searchBox" autocomplete="off" placeholder="Music Search...">
-	          <a href="#" id="search" class="search-btn" type="submit">.</a>
-	          <div id="search-results"></div>
-	        </div>
-	      </form>
-	      <ul class="nav navbar-nav">
-		    	<li><a class="glyphicon glyphicon-search search-btn"></a></li>
-		    </ul>
-	      <ul class="nav navbar-nav navbar-right">
-	        <li><a class="glyphicon glyphicon-step-backward"></a></li>
-	        <li><a id="play-btn" class="glyphicon glyphicon-play"></a></li>
-	        <li><a class="glyphicon glyphicon-step-forward"></a></li>
-<!-- 	        <li><a class="glyphicon glyphicon-volume-up"></a></li>
-	        <li><a class="glyphicon glyphicon-random"></a></li>
-	        <li><a class="glyphicon glyphicon-repeat"></a></li> -->
-	      </ul>
-	    </div>
-	  </div>
-	</nav>
- 
+  <div id="navbar" class="container-fluid">
+  	<div class="col-xs-2">
+  		<div id="projectName">Project 1</div>
+  	</div>
+  	<div class="col-xs-7">
+	    <form id="music-controls" method="post">
+	      <div class="form-group">
+	      	<div class="input-group">
+		        <input type="text" class="form-control" id="searchBox" autocomplete="off" placeholder="Music Search...">
+	    			<span id="search" class="input-group-addon glyphicon glyphicon-search search-btn"></span>
+	      	</div>
+		      <div id="search-results"></div>
+	      </div>
+	    </form>
+  	</div>
+  	<div class="col-xs-3">
+  		<div class="btn-group" role="group" aria-label="...">
+			  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-step-backward"></span></button>
+			  <button id="musicPlay" type="button" class="btn btn-default"><span id="play-btn" class="glyphicon glyphicon-play"></span></button>
+			  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-stop"></span></button>
+			  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-step-forward"></span></button>
+			</div>
+  	</div>
+  </div>
+
 	<ul id="leftTab">
 	<li><span id="leftBurger">&#9776;</span></li>
 	</ul>
