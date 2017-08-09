@@ -4,17 +4,24 @@ body {
   color:white;
 }
 
-.navbar {
+#navbar {
   transition: .5s;
   color: #6D5949;
+  background-color: #FF7400;
+  padding: 10px 0 10px 0;
+}
+
+#projectName {
+  font-size: 4vh;
+}
+
+.btn-default {
+  background-color: #E76900;
+  border-color: #313131;
 }
 
 #projectName {
   color: #6D5949;
-}
-
-.navbar-default {
-  background-color: #FF7400;
 }
 
 .dropdown-menu {
@@ -115,16 +122,13 @@ body {
 .form-group {
   width: 100%;
   position: relative;
-}
-
-#searchBox {
-  width: 98%;
-
+  margin-bottom: 0;
 }
 
 #search {
-  font-size: 0px;
-  margin: 0;
+  background-color: #E76900;
+  border: 0;
+  top: 0;
 }
 
 #search-results {
@@ -137,6 +141,7 @@ body {
   visibility: hidden;
   border: 2px solid #6D5949;
   font-weight: bold;
+  word-wrap: break-word;
   color: #eee
 }
 

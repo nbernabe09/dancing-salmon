@@ -3,10 +3,10 @@ var rightNavIsOpen = false;
 
 // Functions
 function openLeftNav() {
-  $("#leftNav").css("width", "30%");
-  $("#main").css("marginLeft", "30%");
-  $("#leftTab").css("left", "30%");
-  $(".navbar").css("marginLeft", "30%");
+  $("#leftNav").css("width", "20%");
+  $("#main").css("marginLeft", "20%");
+  $("#leftTab").css("left", "20%");
+  $("#navbar").css("marginLeft", "20%");
   leftNavIsOpen=!leftNavIsOpen;
 }
 
@@ -14,7 +14,7 @@ function closeLeftNav() {
   $("#leftNav").css("width", "0");
   $("#main").css("marginLeft", "0");
   $("#leftTab").css("left", "0");
-  $(".navbar").css("marginLeft", "0");
+  $("#navbar").css("marginLeft", "0");
   leftNavIsOpen=!leftNavIsOpen;
 }
 

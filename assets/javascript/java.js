@@ -1,6 +1,6 @@
 var playing = false;
 
-$("#play-btn").on("click", function() {
+$("#musicPlay").on("click", function() {
 	if (playing) {
 		$("#play-btn").attr("class", "glyphicon glyphicon-play")
 	} else {
@@ -63,4 +63,4 @@ function displaySearch(pic, title) {
     $("#search-results").append(newDiv);    
 }
 
-var debouncedAjax = _.debounce(doAjax, 4s00);
+var debouncedAjax = _.debounce(doAjax, 400);
