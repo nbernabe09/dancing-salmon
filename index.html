@@ -26,15 +26,17 @@
 	      <a class="navbar-brand" href="#"><span id="projectName">Project 1</span></a>
 	    </div>
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <form id="music-controls" class="navbar-form navbar-left" method="post">
+	        <div class="form-group">
+	          <input type="text" class="form-control" id="searchBox" autocomplete="off" placeholder="Music Search...">
+	          <a href="#" id="search" class="search-btn" type="submit">.</a>
+	          <div id="search-results"></div>
+	        </div>
+	      </form>
+	      <ul class="nav navbar-nav">
+		    	<li><a class="glyphicon glyphicon-search search-btn"></a></li>
+		    </ul>
 	      <ul class="nav navbar-nav navbar-right">
-          <form id="music-controls" class="navbar-form navbar-left" method="post">
-		        <div class="form-group">
-		          <input type="text" class="form-control" id="searchBox" placeholder="Music Search...">
-		          <a href="#" id="search" class="search-btn" type="submit">.</a>
-		          <div id="test"></div>
-		        </div>
-		      </form>
-		      <li><a class="glyphicon glyphicon-search search-btn"></a></li>
 	        <li><a class="glyphicon glyphicon-step-backward"></a></li>
 	        <li><a id="play-btn" class="glyphicon glyphicon-play"></a></li>
 	        <li><a class="glyphicon glyphicon-step-forward"></a></li>

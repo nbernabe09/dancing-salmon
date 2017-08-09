@@ -14,7 +14,12 @@ $("#music-controls").submit(function() {
 })
 
 $("#searchBox").on("input", function() {
-	event.preventDefault();
-	console.log($("#searchBox").val());
-	
+    var searchText = $("#searchBox").val();
+    if (searchText === "") {
+        $("#search-results").css("visibility", "hidden");
+    } else {
+        event.preventDefault();
+        $("#search-results").css("visibility", "visible");
+        $("#search-results").text(searchText);
+    }
 })
