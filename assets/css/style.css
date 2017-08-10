@@ -39,6 +39,11 @@ body {
   /*min-width: 965px;*/
 }
 
+.main {
+  transition: .5s;
+  padding: 0 20px;
+}
+
 /*Top Navbar*/
   #navbar {
     margin-left: 0;
@@ -249,7 +254,6 @@ body {
     cursor: pointer;
   }
 
-#main {
-  transition: margin-left .5s;
-  padding: 15px 50px 0 50px;
+.jumbotron {
+  background-color: #141414; 
 }
