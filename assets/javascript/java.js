@@ -53,6 +53,10 @@
   }
 
 // Buttons
+  $("#musicBack").on("click", function() {
+    alert("This button goes back one song (if possible)")
+  });
+
   $("#musicPlay").on("click", function() {
   	if (playing) {
   		$("#play-btn").attr("class", "glyphicon glyphicon-play")
@@ -60,6 +64,15 @@
   		$("#play-btn").attr("class", "glyphicon glyphicon-pause")
   	}
   	playing = !playing;
+  });
+
+  $("#musicStop").on("click", function() {
+    $("#play-btn").attr("class", "glyphicon glyphicon-play")
+    playing = false;
+  });
+
+  $("#musicSkip").on("click", function() {
+    alert("This button skips to the next song")
   });
 
   $("#music-search").submit(function() {

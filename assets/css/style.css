@@ -274,15 +274,15 @@ body {
     border-color: #655244;
   }
 
-  .panel-default>#most-recent {
+  .panel-default>#most-recent-heading {
     background: linear-gradient(#aa6a39, #655244);
   }
 
-  .panel-default>#top-songs {
+  .panel-default>#top-songs-heading {
     background: linear-gradient(#a7383e, #655244);
   }
 
-  .panel-default>#new-releases {
+  .panel-default>#new-releases-heading {
     background: linear-gradient(#aa8339, #655244);
   }
 

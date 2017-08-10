@@ -36,10 +36,10 @@
   	</div>
   	<div class="col-xs-3">
   		<div class="btn-group" role="group" aria-label="...">
-			  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-step-backward"></span></button>
+			  <button id="musicBack" type="button" class="btn btn-default"><span class="glyphicon glyphicon-step-backward"></span></button>
 			  <button id="musicPlay" type="button" class="btn btn-default"><span id="play-btn" class="glyphicon glyphicon-play"></span></button>
-			  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-stop"></span></button>
-			  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-step-forward"></span></button>
+			  <button id="musicStop" type="button" class="btn btn-default"><span class="glyphicon glyphicon-stop"></span></button>
+			  <button id="musicSkip" type="button" class="btn btn-default"><span class="glyphicon glyphicon-step-forward"></span></button>
 			</div>
   	</div>
   </div>
@@ -92,131 +92,137 @@
 	<div class="main">
 		<div class="container-fluid">
 
-			<div class="jumbotron">
+			<div id="mainScreen" class="jumbotron">
 			  <h1>Project 1</h1>
 			  <p>Music Application</p>
+			  <p>This area will turn into a YouTube video when searches are made.</p>
+			  <p>The contents below are in one &lt;div&gt; so everything can be changed with proper search content.</p>
+			  <p>Clicking on an artist will pop open a side panel with more description.</p>
+			  <p>All content is subject to change.</p>
 			</div>	
 
-			<div class="panel panel-default clearfix">
-			  <div class="panel-heading" id="most-recent">
-			    <h3 class="panel-title">Most Recent Searches</h3>
-			  </div>
-			  <div class="col-xs-6 col-md-3">
-			    <a href="#" class="thumbnail">
-			      <img src="assets/images/empty.jpg">
-			      <div class="caption">
-			        <h3>Unknown Album</h3>
-			      </div>
-			    </a>
-			  </div>
-			  <div class="col-xs-6 col-md-3">
-			    <a href="#" class="thumbnail">
-			      <img src="assets/images/empty.jpg">
-			      <div class="caption">
-			        <h3>Unknown Song</h3>
-			      </div>
-			    </a>
-			  </div>
-			  <div class="col-xs-6 col-md-3">
-			    <a href="#" class="thumbnail artist">
-			      <img src="assets/images/empty.jpg">
-			      <div class="caption">
-			        <h3>Unknown Artist</h3>
-			      </div>
-			    </a>
-			  </div>
-			  <div class="col-xs-6 col-md-3">
-			    <a href="#" class="thumbnail">
-			      <img src="assets/images/empty.jpg">
-			      <div class="caption">
-			        <h3>Unknown Album</h3>
-			      </div>
-			    </a>
-			  </div>
-			</div>
+			<div id="mainContent">
+				<div id="mostRecent" class="panel panel-default clearfix">
+				  <div class="panel-heading" id="most-recent-heading">
+				    <h3 class="panel-title">Most Recent Searches</h3>
+				  </div>
+				  <div class="col-xs-6 col-md-3">
+				    <a href="#" class="thumbnail">
+				      <img src="assets/images/empty.jpg">
+				      <div class="caption">
+				        <h3>Unknown Album</h3>
+				      </div>
+				    </a>
+				  </div>
+				  <div class="col-xs-6 col-md-3">
+				    <a href="#" class="thumbnail">
+				      <img src="assets/images/empty.jpg">
+				      <div class="caption">
+				        <h3>Unknown Song</h3>
+				      </div>
+				    </a>
+				  </div>
+				  <div class="col-xs-6 col-md-3">
+				    <a href="#" class="thumbnail artist">
+				      <img src="assets/images/empty.jpg">
+				      <div class="caption">
+				        <h3>Unknown Artist</h3>
+				      </div>
+				    </a>
+				  </div>
+				  <div class="col-xs-6 col-md-3">
+				    <a href="#" class="thumbnail">
+				      <img src="assets/images/empty.jpg">
+				      <div class="caption">
+				        <h3>Unknown Album</h3>
+				      </div>
+				    </a>
+				  </div>
+				</div>
 
-			<div class="panel panel-default clearfix">
-			  <div class="panel-heading" id="top-songs">
-			    <h3 class="panel-title">Top Songs</h3>
-			  </div>
-			  <div class="col-xs-6 col-md-3">
-			    <a href="#" class="thumbnail">
-			      <img src="assets/images/empty.jpg">
-			      <div class="caption">
-			        <h3>Unknown Song</h3>
-			      	<p class="artist">Unknown Artist</p>
-			      </div>
-			    </a>
-			  </div>
-			  <div class="col-xs-6 col-md-3">
-			    <a href="#" class="thumbnail">
-			      <img src="assets/images/empty.jpg">
-			      <div class="caption">
-			        <h3>Unknown Song</h3>
-			      	<p class="artist">Unknown Artist</p>
-			      </div>
-			    </a>
-			  </div>
-			  <div class="col-xs-6 col-md-3">
-			    <a href="#" class="thumbnail">
-			      <img src="assets/images/empty.jpg">
-			      <div class="caption">
-			        <h3>Unknown Song</h3>
-			      	<p class="artist">Unknown Artist</p>
-			      </div>
-			    </a>
-			  </div>
-			  <div class="col-xs-6 col-md-3">
-			    <a href="#" class="thumbnail">
-			      <img src="assets/images/empty.jpg">
-			      <div class="caption">
-			        <h3>Unknown Song</h3>
-			      	<p class="artist">Unknown Artist</p>
-			      </div>
-			    </a>
-			  </div>
-			</div>
-			
-			<div class="panel panel-default clearfix">
-			  <div class="panel-heading" id="new-releases">
-			    <h3 class="panel-title">New Releases</h3>
-			  </div>
-			  <div class="col-xs-6 col-md-3">
-			    <a href="#" class="thumbnail">
-			      <img src="assets/images/empty.jpg">
-			      <div class="caption">
-			        <h3>Unknown Album</h3>
-			      	<p class="artist">Unknown Artist</p>
-			      </div>
-			    </a>
-			  </div>
-			  <div class="col-xs-6 col-md-3">
-			    <a href="#" class="thumbnail">
-			      <img src="assets/images/empty.jpg">
-			      <div class="caption">
-			        <h3>Unknown Album</h3>
-			      	<p class="artist">Unknown Artist</p>
-			      </div>
-			    </a>
-			  </div>
-			  <div class="col-xs-6 col-md-3">
-			    <a href="#" class="thumbnail">
-			      <img src="assets/images/empty.jpg">
-			      <div class="caption">
-			        <h3>Unknown Album</h3>
-			      	<p class="artist">Unknown Artist</p>
-			      </div>
-			    </a>
-			  </div>
-			  <div class="col-xs-6 col-md-3">
-			    <a href="#" class="thumbnail">
-			      <img src="assets/images/empty.jpg">
-			      <div class="caption">
-			        <h3>Unknown Album</h3>
-			      	<p class="artist">Unknown Artist</p>
-			      </div>
-			    </a>
-			  </div>
+				<div id="topSongs" class="panel panel-default clearfix">
+				  <div class="panel-heading" id="top-songs-heading">
+				    <h3 class="panel-title">Top Songs</h3>
+				  </div>
+				  <div class="col-xs-6 col-md-3">
+				    <a href="#" class="thumbnail">
+				      <img src="assets/images/empty.jpg">
+				      <div class="caption">
+				        <h3>Unknown Song</h3>
+				      	<p class="artist">Unknown Artist</p>
+				      </div>
+				    </a>
+				  </div>
+				  <div class="col-xs-6 col-md-3">
+				    <a href="#" class="thumbnail">
+				      <img src="assets/images/empty.jpg">
+				      <div class="caption">
+				        <h3>Unknown Song</h3>
+				      	<p class="artist">Unknown Artist</p>
+				      </div>
+				    </a>
+				  </div>
+				  <div class="col-xs-6 col-md-3">
+				    <a href="#" class="thumbnail">
+				      <img src="assets/images/empty.jpg">
+				      <div class="caption">
+				        <h3>Unknown Song</h3>
+				      	<p class="artist">Unknown Artist</p>
+				      </div>
+				    </a>
+				  </div>
+				  <div class="col-xs-6 col-md-3">
+				    <a href="#" class="thumbnail">
+				      <img src="assets/images/empty.jpg">
+				      <div class="caption">
+				        <h3>Unknown Song</h3>
+				      	<p class="artist">Unknown Artist</p>
+				      </div>
+				    </a>
+				  </div>
+				</div>
+				
+				<div id="newReleases" class="panel panel-default clearfix">
+				  <div class="panel-heading" id="new-releases-heading">
+				    <h3 class="panel-title">New Releases</h3>
+				  </div>
+				  <div class="col-xs-6 col-md-3">
+				    <a href="#" class="thumbnail">
+				      <img src="assets/images/empty.jpg">
+				      <div class="caption">
+				        <h3>Unknown Album</h3>
+				      	<p class="artist">Unknown Artist</p>
+				      </div>
+				    </a>
+				  </div>
+				  <div class="col-xs-6 col-md-3">
+				    <a href="#" class="thumbnail">
+				      <img src="assets/images/empty.jpg">
+				      <div class="caption">
+				        <h3>Unknown Album</h3>
+				      	<p class="artist">Unknown Artist</p>
+				      </div>
+				    </a>
+				  </div>
+				  <div class="col-xs-6 col-md-3">
+				    <a href="#" class="thumbnail">
+				      <img src="assets/images/empty.jpg">
+				      <div class="caption">
+				        <h3>Unknown Album</h3>
+				      	<p class="artist">Unknown Artist</p>
+				      </div>
+				    </a>
+				  </div>
+				  <div class="col-xs-6 col-md-3">
+				    <a href="#" class="thumbnail">
+				      <img src="assets/images/empty.jpg">
+				      <div class="caption">
+				        <h3>Unknown Album</h3>
+				      	<p class="artist">Unknown Artist</p>
+				      </div>
+				    </a>
+				  </div>
+				</div>
 			</div>
 
 		</div>
