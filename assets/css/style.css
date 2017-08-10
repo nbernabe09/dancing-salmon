@@ -49,7 +49,7 @@ body {
     margin-left: 0;
     transition: .5s;
     color: #202020;
-    background-color: #ff6f00;
+    background: linear-gradient(#ff6f00, #655244);
     padding: 10px 0 10px 0;
     border-bottom: 2px solid #655244;
     z-index: 20;
@@ -84,7 +84,7 @@ body {
 /*Search Bar*/
   #searchBox {
     background-color: #ef6800;
-    border: 0;
+    border-color: #655244;
     color: #202020;
   }
 
@@ -98,6 +98,12 @@ body {
 
   .search-line {
     padding:.1vh 2%;
+    transition: .3s;
+  }
+
+  .search-line:hover {
+    background-color: #2a3e3d;
+    cursor: pointer;
   }
 
   #music-search {
@@ -111,7 +117,7 @@ body {
   #search {
     background-color: #ef6800;
     color: #202020;
-    border: 0;
+    border-color: #655244;
     top: 0;
   }
 
@@ -123,15 +129,16 @@ body {
   #search-results {
     position: absolute;
     padding: 2px 10px;
-    left:0;
-    width:100%;
-    min-height:200px;
+    left: 0;
+    width: 100%;
+    min-height: 200px;
     background-color: #141414;
     visibility: hidden;
     border: 2px solid #2a3e3d;
     font-weight: bold;
     word-wrap: break-word;
     color: #fff;
+    z-index: 100;
   }
 
 /*Side Nav*/
@@ -143,7 +150,7 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #a7383e;
+    background: linear-gradient(to right, #634244, #a7383e);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 50px;
@@ -156,13 +163,13 @@ body {
     z-index: 1;
     top: 0;
     right: 0;
-    background-color: #aa8339;
+    background: linear-gradient(to right, #aa8339, #655944);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 50px;
   }
 
-  #leftNav span, #rightNav a, #rightNav h5{
+  #leftNav a, #rightNav a, #rightNav h5{
     padding: 1vh 2% 1vh 8%;
     text-decoration: none;
     font-size: 1.7vw;
@@ -171,7 +178,7 @@ body {
     transition: 0.3s;
   }
 
-  #leftNav span:hover, #rightNav a:hover {
+  #leftNav a:hover, #rightNav a:hover {
     color: #ef9d00;
   }
 
@@ -255,5 +262,41 @@ body {
   }
 
 .jumbotron {
-  background-color: #141414; 
+  background-color: #141414;
+  text-align: center;
+}
+
+.panel-default>.panel-heading {
+  background: linear-gradient(#aa6a39, #655244);
+  color: #fff;
+  border-color: #655244;
+}
+
+.panel-default, .thumbnail {
+  border: 0;
+  background-color: #141414;
+  transition: .3s;
+}
+
+.caption h3 {
+  text-align: center;
+  color: #fff;
+}
+
+.caption p {
+  text-align: center;
+  color: #655944;
+}
+
+.thumbnail:hover {
+  background-color: #2a3e3d;
+  text-decoration: none;
+}
+
+.thumbnail:focus {
+  text-decoration: none;
+}
+
+.thumbnail img {
+  width: 200px;
 }
