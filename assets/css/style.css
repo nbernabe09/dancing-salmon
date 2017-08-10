@@ -67,7 +67,7 @@ body {
   }
 
   .btn {
-    background-color: #ef6800;
+    background-color: #a7383e;
     border-color: #655244;
     color: #202020;
   }
@@ -83,9 +83,9 @@ body {
 
 /*Search Bar*/
   #searchBox {
-    background-color: #ef6800;
+    background-color: #202020;
     border-color: #655244;
-    color: #202020;
+    color: #fff;
   }
 
   .search-image {
@@ -98,7 +98,7 @@ body {
 
   .search-line {
     padding:.1vh 2%;
-    transition: .3s;
+    /*transition: .3s;*/
   }
 
   .search-line:hover {
@@ -132,6 +132,7 @@ body {
     left: 0;
     width: 100%;
     min-height: 200px;
+    /*transition: .3s;*/
     background-color: #141414;
     visibility: hidden;
     border: 2px solid #2a3e3d;
@@ -261,42 +262,56 @@ body {
     cursor: pointer;
   }
 
-.jumbotron {
-  background-color: #141414;
-  text-align: center;
-}
+/*Jumbotron*/
+  .jumbotron {
+    background-color: #141414;
+    text-align: center;
+  }
 
-.panel-default>.panel-heading {
-  background: linear-gradient(#aa6a39, #655244);
-  color: #fff;
-  border-color: #655244;
-}
+/*Panel Elements*/
+  .panel-default>.panel-heading {
+    color: #fff;
+    border-color: #655244;
+  }
 
-.panel-default, .thumbnail {
-  border: 0;
-  background-color: #141414;
-  transition: .3s;
-}
+  .panel-default>#most-recent {
+    background: linear-gradient(#aa6a39, #655244);
+  }
 
-.caption h3 {
-  text-align: center;
-  color: #fff;
-}
+  .panel-default>#top-songs {
+    background: linear-gradient(#a7383e, #655244);
+  }
 
-.caption p {
-  text-align: center;
-  color: #655944;
-}
+  .panel-default>#new-releases {
+    background: linear-gradient(#aa8339, #655244);
+  }
 
-.thumbnail:hover {
-  background-color: #2a3e3d;
-  text-decoration: none;
-}
+  .panel-default, .panel-default .thumbnail {
+    border: 0;
+    background-color: #141414;
+    transition: .3s;
+  }
 
-.thumbnail:focus {
-  text-decoration: none;
-}
+/*Thumbnail Elements*/
+  .caption h3 {
+    text-align: center;
+    color: #fff;
+  }
 
-.thumbnail img {
-  width: 200px;
-}
+  .caption p {
+    text-align: center;
+    color: #655944;
+  }
+
+  .thumbnail:hover {
+    background-color: #2a3e3d;
+    text-decoration: none;
+  }
+
+  .thumbnail:focus {
+    text-decoration: none;
+  }
+
+  .thumbnail img {
+    width: 200px;
+  }

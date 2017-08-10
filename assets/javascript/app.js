@@ -61,3 +61,4 @@
 	$(".artist").on("click", openArtNav);
 
 	$("#closeArtist").on("click", closeArtNav);
+	
