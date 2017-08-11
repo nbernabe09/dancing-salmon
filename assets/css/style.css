@@ -225,15 +225,15 @@ body {
 
 /*Artist Page*/
   #artistPage {
+      display: none;
       height: 100%;
-      width: 0;
+      width: 100%;
       position: fixed;
       z-index: 10;
       top: 0;
       left: 0;
       background-color: #2a3e3d;
       overflow-x: hidden;
-      transition: 0.5s;
       padding-top: 60px;
       padding-bottom: 50px;
       text-align:center;

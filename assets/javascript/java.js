@@ -42,11 +42,11 @@
   }
 
   function openArtNav() {
-    $("#artistPage").css("width", "100%");
+    $("#artistPage").show(500);
   }
 
   function closeArtNav() {
-    $("#artistPage").css("width", "0");
+    $("#artistPage").hide(500);
   }
 
   function showResults() {
