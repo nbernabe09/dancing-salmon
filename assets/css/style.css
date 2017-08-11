@@ -173,7 +173,7 @@ body {
     padding-top: 50px;
   }
 
-  #leftNav a, #rightNav a, #rightNav h5{
+  #leftNav a, #rightNav p, #rightNav h5{
     padding: 1vh 2% 1vh 8%;
     text-decoration: none;
     font-size: 1.7vw;
@@ -182,8 +182,9 @@ body {
     transition: 0.3s;
   }
 
-  #leftNav a:hover, #rightNav a:hover {
+  #leftNav a:hover, #rightNav p:hover {
     color: #ef9d00;
+    cursor: pointer;
   }
 
   #leftBurger, #rightBurger {
@@ -266,7 +267,6 @@ body {
     cursor: pointer;
   }
 
-
 /*Jumbotron*/
   .jumbotron {
     background-color: #141414;
@@ -330,4 +330,10 @@ body {
     width: 100%;
     padding-top: 5px;
     transition: .5s;
+  }
+
+  #bottomNav #nowPlaying {
+    background-color: #ef6800;
+    color: #202020;
+    cursor: default;
   }

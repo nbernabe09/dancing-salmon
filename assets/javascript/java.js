@@ -5,6 +5,7 @@
   var debouncedAjax = _.debounce(doAjax, 400);
   var resultsHidden = true;
   var currentArtist = "";
+  var currentStation = "";
   var discogsCall = new DiscogsAPIUtil();
 
 // Functions
@@ -134,28 +135,38 @@
   $(".artist").on("click", openArtNav);
 
   $("#closeArtist").on("click", closeArtNav);
-  
-  $("#musicBack").on("click", function() {
-    alert("This button goes back one song (if possible)")
-  });
+
+  // $("#musicBack").on("click", function() {
+  //   alert("This button goes back one song (if possible)")
+  // });
 
   $("#musicPlay").on("click", function() {
-  	if (playing) {
-  		$("#play-btn").attr("class", "glyphicon glyphicon-play")
-  	} else {
-  		$("#play-btn").attr("class", "glyphicon glyphicon-pause")
-  	}
-  	playing = !playing;
+  	if ($("#radio").attr("src") === "") {
+      alert("Use the right tab to load a radio station!");
+    } else {
+      if (playing) {
+        $("#radio")[0].pause();
+    		$("#play-btn").attr("class", "glyphicon glyphicon-play")
+    	} else {
+        $("#radio")[0].play();
+    		$("#play-btn").attr("class", "glyphicon glyphicon-pause")
+    	}
+    	playing = !playing;
+    }
+
   });
 
   $("#musicStop").on("click", function() {
-    $("#play-btn").attr("class", "glyphicon glyphicon-play")
+    $("#radio").attr("src", "");
+    $("#currentStation").text("");
+    $("#play-btn").attr("class", "glyphicon glyphicon-play");
+    $("#radio")[0].pause();
     playing = false;
   });
 
-  $("#musicSkip").on("click", function() {
-    alert("This button skips to the next song")
-  });
+  // $("#musicSkip").on("click", function() {
+  //   alert("This button skips to the next song")
+  // });
 
   $("#music-search").submit(function() {
   	event.preventDefault();
@@ -210,3 +221,12 @@
  	$("#boomboom").on("click", function() {
  		currentArtist = $(this).attr("value");
  	});
+
+  $(".station").on("click", function() {
+    currentStation = $(this).attr("value");
+    $("#currentStation").text($(this).attr("station"));
+    $("#radio").attr("src", currentStation);
+    $("#radio")[0].play();
+    $("#play-btn").attr("class", "glyphicon glyphicon-pause")
+    playing = true;
+  });

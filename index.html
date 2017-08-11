@@ -15,7 +15,7 @@
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <!-- Firebase Reference -->
-  <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
 </head>
 <body>
 
@@ -55,22 +55,26 @@
 	</ul>
 
 	<div id="rightNav">
+		<audio id="radio" src=""></audio>
 		<h5><b>Music Player</b></h5>
-	  <a href="#">Alternative</a>
-	  <a href="#">Blues</a>
-	  <a href="#">Classical</a>
-	  <a href="#">Country</a>
-	  <a href="#">Dance</a>
-	  <a href="#">Easy Listening</a>
-	  <a href="#">Electronic</a>
-	  <a href="#">Hip-Hop/Rap</a>
-	  <a href="#">Jazz</a>
-	  <a href="#">New Age</a>
-	  <a href="#">Pop</a>
-	  <a href="#">R&amp;B/Soul</a>
-	  <a href="#">Reggae</a>
-	  <a href="#">Rock</a>
-	  <a href="#">World</a>
+	  <!-- <p class="station" station="Alternative" value="">Alternative</p> -->
+	  <!-- <p class="station" station="Blues" value="">Blues</p> -->
+	  <p class="station" station="Classical" value="http://whro.mediaplayer.whro.org/128">Classical</p>
+	  <p class="station" station="Classic Rock" value="http://s46.myradiostream.com:7608/;">Classic Rock</p>
+	  <p class="station" station="Country" value="http://lynx.prostreaming.net:8004/stream/;">Country</p>
+	  <!-- <p class="station" station="Dance" value="">Dance</p> -->
+	  <!-- <p class="station" station="Easy Listening" value="">Easy Listening</p> -->
+	  <!-- <p class="station" station="Electronic" value="">Electronic</p> -->
+	  <p class="station" station="Hip-Hop/Rap" value="http://5.39.71.159:8100/;">Hip-Hop/Rap</p>
+	  <!-- <p class="station" station="Jazz" value="">Jazz</p> -->
+	  <!-- <p class="station" station="New Age" value="">New Age</p> -->
+	  <p class="station" station="Oldies" value="http://192.95.18.39:5336/stream/;">Oldies</p>
+	  <!-- <p class="station" station="Pop" value="">Pop</p> -->
+	  <!-- <p class="station" station="R&amp;B/Soul" value="">R&amp;B/Soul</p> -->
+	  <!-- <p class="station" station="Reggae" value="">Reggae</p> -->
+	  <!-- <p class="station" station="Rock" value="">Rock</p> -->
+	  <p class="station" station="Slow Jams" value="http://ritetimeradio.filehostia.com:8582/;">Slow Jams</p>
+	  <!-- <p class="station" station="World" value="">World</p> -->
 	</div>
 
 	<div id="artistPage">
@@ -220,14 +224,15 @@
 	</div></div>
 
 	<nav id="bottomNav" class="navbar navbar-default navbar-fixed-bottom text-center">
-	  <div id="musicTest" class="container">
-	    <div class="btn-group" role="group" aria-label="...">
-			  <button id="musicBack" type="button" class="btn btn-default"><span class="glyphicon glyphicon-step-backward"></span></button>
+	  <div class="container-fluid">
+	    <div class="btn-group" role="group">
+			  <!-- <button id="musicBack" type="button" class="btn btn-default"><span class="glyphicon glyphicon-step-backward"></span></button> -->
 			  <button id="musicPlay" type="button" class="btn btn-default"><span id="play-btn" class="glyphicon glyphicon-play"></span></button>
 			  <button id="musicStop" type="button" class="btn btn-default"><span class="glyphicon glyphicon-stop"></span></button>
-			  <button id="musicSkip" type="button" class="btn btn-default"><span class="glyphicon glyphicon-step-forward"></span></button>
+			  <!-- <button id="musicSkip" type="button" class="btn btn-default"><span class="glyphicon glyphicon-step-forward"></span></button> -->
+				<div id="nowPlaying" class="btn btn-default">Now playing: <span id="currentStation"></span></div>
 			</div>
-	  </div>
+		</div>
 	</nav>
 
 	<!-- JavaScript -->
