@@ -24,12 +24,14 @@
 	function openRightNav() {
 	  $("#rightNav").css("width", "20%");
 	  $("#rightTab").css("right", "20%");
+    $("#bottomNav").css("width", "80%");
 	  rightNavIsOpen=!rightNavIsOpen;
 	}
 
 	function closeRightNav() {
 	  $("#rightNav").css("width", "0");
 	  $("#rightTab").css("right", "0");
+    $("#bottomNav").css("width", "100%");
 	  rightNavIsOpen=!rightNavIsOpen;
 	}
 
@@ -38,7 +40,7 @@
 	}
 
 	function closeArtNav() {
-	  $("#artistPage").css("width", "0");
+    $("#artistPage").css("width", "0");
 	}
 
 // Buttons

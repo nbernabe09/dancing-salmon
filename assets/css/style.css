@@ -41,7 +41,7 @@ body {
 
 .main {
   transition: .5s;
-  padding: 0 20px;
+  padding: 0 20px 50px 20px;
 }
 
 /*Top Navbar*/
@@ -52,7 +52,7 @@ body {
     background: linear-gradient(#ff6f00, #655244);
     padding: 10px 0 10px 0;
     border-bottom: 2px solid #655244;
-    z-index: 20;
+    z-index: 7;
   }
 
   #projectName {
@@ -107,7 +107,7 @@ body {
   }
 
   #music-search {
-    width: 400px;
+    max-width: 500px;
   }
 
   .dropdown-menu {
@@ -131,7 +131,10 @@ body {
     padding: 2px 10px;
     left: 0;
     width: 100%;
-    min-height: 200px;
+    min-height: 20vh;
+    max-height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden;
     /*transition: .3s;*/
     background-color: #141414;
     visibility: hidden;
@@ -139,7 +142,7 @@ body {
     font-weight: bold;
     word-wrap: break-word;
     color: #fff;
-    z-index: 100;
+    z-index: 8;
   }
 
 /*Side Nav*/
@@ -154,14 +157,14 @@ body {
     background: linear-gradient(to right, #634244, #a7383e);
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 50px;
+    padding: 50px 0;
   }
 
   #rightNav {
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 9;
     top: 0;
     right: 0;
     background: linear-gradient(to right, #aa8339, #655944);
@@ -207,7 +210,7 @@ body {
     cursor: pointer;
     list-style: none; 
     position: fixed;
-    z-index: 1;
+    z-index: 9;
     right: 0;
     top: 75px;
     transition: .5s;
@@ -231,36 +234,38 @@ body {
       overflow-x: hidden;
       transition: 0.5s;
       padding-top: 60px;
+      padding-bottom: 50px;
       text-align:center;
       opacity: 0.95;
   }
 
-  #artistPage a {
-      padding: 8px 8px 8px 32px;
-      text-decoration: none;
-      font-size: 25px;
-      color: #fff;
-      display: block;
-      transition: 0.3s;
-
+  #artistPage p {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
   }
 
-  #artistPage a:hover {
-      color: #00dbcb;
+  #artistPage p:hover {
+    color: #00dbcb;
+    cursor: pointer;
   }
 
   #artistPage #closeArtist {
-      position: absolute;
-      top: 0;
-      right: 25px;
-      font-size: 36px;
-      margin-left: 50px;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
   }
 
   #artistBurger {
     font-size: 30px;
     cursor: pointer;
   }
+
 
 /*Jumbotron*/
   .jumbotron {
@@ -282,7 +287,7 @@ body {
     background: linear-gradient(#a7383e, #655244);
   }
 
-  .panel-default>#new-releases-heading {
+  .panel-default>#nearby-concerts-heading {
     background: linear-gradient(#aa8339, #655244);
   }
 
@@ -314,4 +319,15 @@ body {
 
   .thumbnail img {
     width: 200px;
+  }
+
+/*Bottom Navbar*/
+  #bottomNav {
+    background: linear-gradient(#655244, #ff6f00);
+    border-color: #655244;
+    vertical-align: middle;
+    left: 0;
+    width: 100%;
+    padding-top: 5px;
+    transition: .5s;
   }

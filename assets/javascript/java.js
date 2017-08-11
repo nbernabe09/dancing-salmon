@@ -2,6 +2,8 @@
   var playing = false;
   var debouncedAjax = _.debounce(doAjax, 400);
   var resultsHidden = true;
+  var currentArtist = "";
+  var discogsCall = new DiscogsAPIUtil();
 
 // Functions
   function showResults() {
@@ -18,23 +20,37 @@
     $("#search-results").empty();
     var songArray = [];
     var song = $("#searchBox").val();
-    var queryURL = 'https://api.discogs.com/database/search?q='+song+'&key=JOwiPIVkZGKqzPMffeLo&secret=TTdaxTVwWBjataauUqtEjCGckNrSOmtk';
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).done(function(response) {
-      var noDuplicates = _.uniqBy(response.results, function(list) { return list.title; });
+    discogsCall.queryAPI(song).then((resp) => {
+    	var sr = discogsCall.newSR(resp.results);
+    	var tmpId = sr.release[0].id;
+    	discogsCall.releaseAPI(tmpId).then(function(res) {
+    		console.log("%%%");
+    		console.log(res.videos[0].uri);
+    		console.log("%%%");
+    	})
+    	sr.release.forEach(function(elem){
+    		displayArtist(elem.thumb, elem.title)
+    	})
+    	/*var noDuplicates = _.uniqBy(sr.artist, function(list) { return list.title; });/
       var numItems = 10;
       if(noDuplicates.length < numItems) {
           numItems = noDuplicates.length;
       }
       for(var i=0; i<numItems; i++) {
           displaySearch(noDuplicates[i].thumb, noDuplicates[i].title)
-      }
+      }*/
     });
+    
+    /*var queryURL = 'https://api.discogs.com/database/search?q='+song+'&key=JOwiPIVkZGKqzPMffeLo&secret=TTdaxTVwWBjataauUqtEjCGckNrSOmtk';
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).done(function(response) {
+      
+    });*/
   }
 
-  function displaySearch(pic, title) {
+  function displaySearch(pic, title, type, id) {
     var newDiv = $("<div>");
     var leftDiv = $("<div>");
     var rightDiv = $("<div>");
@@ -50,6 +66,10 @@
     newDiv.append(leftDiv);
     newDiv.append(rightDiv);
     $("#search-results").append(newDiv);    
+  }
+
+  function displayArtist(pic, title, id) {
+  	displaySearch(pic, title, "artist", id);
   }
 
 // Buttons
@@ -101,3 +121,30 @@
     }
   });
   
+ 	$("#upcoming-concerts").on("click", function() {
+	 	$("#home-page").hide();
+	 	$("#upcoming-concerts-display").show();
+	 	$("#upcoming-concerts-display").html("<h1>" + currentArtist + "</h1>");
+	  $("#artistPage").css("width", "0");
+ 		console.log(currentArtist);
+ 		var bandsInTown = new BitAPI();
+ 		bandsInTown.searchAPI(currentArtist).then((bitData)=>{
+ 				bitData.forEach((elem)=>{
+ 					var newDiv = $("<div>")
+ 					newDiv.append(elem.id);
+ 					newDiv.append("<br>");
+ 					newDiv.append(elem.date);
+ 					newDiv.append("<br>");
+ 					newDiv.append(elem.city);
+ 					newDiv.append("<br>");
+ 					newDiv.append(elem.venue);
+ 					newDiv.append("<br>");
+ 					newDiv.append("<a href ='" + elem.ticketURL + "'>Buy Tickets</a>");
+ 					$("#upcoming-concerts-display").append(newDiv)
+ 				});
+ 		})
+ 	})
+ 	
+ 	$("#boomboom").on("click", function() {
+ 		currentArtist = $(this).attr("value");
+ 	});
