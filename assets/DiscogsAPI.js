@@ -45,6 +45,11 @@ function DiscogsArtist(dartObj) {
   this.images     = dartObj.images;
 }
 
+function DiscogsMaster(dmastObj) {
+  this.id         = dmastObj.id;
+  
+}
+
 function SearchRequests(resultAr) {
   this.artist = [];
   this.master = [];
