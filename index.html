@@ -57,17 +57,17 @@
 	<div id="rightNav">
 		<audio id="radio" src=""></audio>
 		<h5><b>Music Player</b></h5>
-	  <!-- <p class="station" station="Alternative" value="">Alternative</p> -->
+	  <p class="station" station="Alternative" value="http://cabhs31.sonixcast.com:20254/;">Alternative</p>
 	  <!-- <p class="station" station="Blues" value="">Blues</p> -->
 	  <p class="station" station="Classical" value="http://whro.mediaplayer.whro.org/128">Classical</p>
 	  <p class="station" station="Classic Rock" value="http://s46.myradiostream.com:7608/;">Classic Rock</p>
 	  <p class="station" station="Country" value="http://lynx.prostreaming.net:8004/stream/;">Country</p>
 	  <p class="station" station="Dance" value="http://edmFeed.com:8000/edmFeed">Dance</p>
-	  <p class="station" station="Easy Listening" value="http://209.95.50.189:8074/stream
-/;">Easy Listening</p>
+	  <p class="station" station="Easy Listening" value="http://209.95.50.189:8074/stream/;">Easy Listening</p>
 	  <p class="station" station="Electronic" value="http://188.165.244.10:27015/;">Electronic</p>
-	  <p class="station" station="Hip-Hop/Rap" value="http://5.39.71.159:8100/;">Hip-Hop/Rap</p>
+	  <p class="station" station="Hip-Hop/Rap" value="http://streaming.radio.co/s900bb350d/listen">Hip-Hop/Rap</p>
 	  <!-- <p class="station" station="Jazz" value="">Jazz</p> -->
+	  <p class="station" station="Pop" value="http://cabhs31.sonixcast.com:20002/;">J-Pop</p>
 	  <!-- <p class="station" station="New Age" value="">New Age</p> -->
 	  <p class="station" station="Oldies" value="http://192.95.18.39:5336/stream/;">Oldies</p>
 	  <!-- <p class="station" station="Pop" value="">Pop</p> -->
@@ -86,8 +86,8 @@
 	  <p id="upcoming-concerts">Upcoming Concerts</<p>
 	</div>
 
-	<div id="home-page" class="main">
-		<div class="container-fluid">
+	<div class="main"><!-- Do not change this div -->
+		<div class="container-fluid" id="home-page">
 
 			<div id="mainScreen" class="jumbotron">
 			  <h1>Project 1</h1>
@@ -217,12 +217,12 @@
 				  </div>
 				</div>
 			</div>
-
 		</div>
-	</div>
 
-	<div class="container"><div id="upcoming-concerts-display">
-	</div></div>
+		<div class="container-fluid" id="upcoming-concerts-display">
+		</div>
+		
+	</div><!-- Add content above this div -->
 
 	<nav id="bottomNav" class="navbar navbar-default navbar-fixed-bottom text-center">
 	  <div class="container-fluid">
@@ -237,6 +237,8 @@
 	</nav>
 
 	<!-- JavaScript -->
+	<script type="text/javascript" src="assets/javascript/firewire.js"></script>
+	<script type="text/javascript" src="assets/javascript/MusixMatchAPI.js"></script>
 	<script type="text/javascript" src="assets/javascript/BitAPI.js"></script>
 	<script type="text/javascript" src="assets/javascript/DiscogsAPIUtil.js"></script>
 	<script type="text/javascript" src="assets/javascript/java.js"></script>
