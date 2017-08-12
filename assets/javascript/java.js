@@ -93,13 +93,13 @@
       })
     });
 
-    /*var queryURL = 'https://api.discogs.com/database/search?q='+song+'&key=JOwiPIVkZGKqzPMffeLo&secret=TTdaxTVwWBjataauUqtEjCGckNrSOmtk';
+    var queryURL = 'https://api.discogs.com/database/search?q=eminem&key=JOwiPIVkZGKqzPMffeLo&secret=TTdaxTVwWBjataauUqtEjCGckNrSOmtk';
     $.ajax({
       url: queryURL,
       method: "GET"
     }).done(function(response) {
-
-    });*/
+      /*console.log(response)*/
+    });
   }
 
   function displaySearch(pic, title, type, id) {
@@ -266,18 +266,21 @@
       $("#artistPage").show(500);
 
       $("#about-artist").empty();
-      var queryURL = 'https://en.wikipedia.org/w/api.php?action=opensearch&search=' + currentArtist + '&format=json&callback=?';
-      $.ajax({
-        url: queryURL,
-        type: "GET",
-        contentType: "application/json; charset=utf-8",
-        async: false,
-        dataType: "json",
-        method: "GET"
-      }).done(function(response) {
-        console.log(response);
-        $("#about-artist").append(response[2][0]);
-      });
+      discogsCall.artistAPI(id).then((resp) => {
+        $("#about-artist").append(resp.profile);
+      })
+
+      // var queryURL = 'https://en.wikipedia.org/w/api.php?action=opensearch&search=' + currentArtist + '&format=json&callback=?';
+      // $.ajax({
+      //   url: queryURL,
+      //   type: "GET",
+      //   contentType: "application/json; charset=utf-8",
+      //   async: false,
+      //   dataType: "json",
+      //   method: "GET"
+      // }).done(function(response) {
+      //   $("#about-artist").append(response[2][0]);
+      // });
   
       $("#top-songs").empty();
       discogsCall.queryAPI(currentArtist).then((resp) => {
