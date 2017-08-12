@@ -241,3 +241,13 @@
     $("#play-btn").attr("class", "glyphicon glyphicon-pause")
     playing = true;
   });
+
+  $(document).on('click',function(){
+    if (!resultsHidden){
+      hideResults();
+    }
+  });
+
+  $('#search-results').on('click','.search-line',function(){
+    
+  });

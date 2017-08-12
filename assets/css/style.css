@@ -223,6 +223,10 @@ body {
     background: #aa8339;
   }
 
+  .leftNavList, .rightNavList {
+    /*width:110px;*/
+  }
+
 /*Artist Page*/
   #artistPage {
       display: none;
