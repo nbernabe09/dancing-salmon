@@ -65,6 +65,12 @@ $(document).on('click', function() {
   }
 });
 
+  function hideResults() {
+    $("#search-results").css("visibility", "hidden");
+    resultsHidden = true;
+  }
+
+
 function doAjax() {
   $("#search-results").empty();
   var songArray = [];
@@ -104,6 +110,26 @@ function displaySearch(pic, title, type, id) {
   var leftDiv       =     $("<div>");
   var rightDiv      =     $("<div>");
   var newImg        =     $("<img>");
+
+  function displaySearch(pic, title, type, id) {
+    var newDiv = $("<div>");
+    var leftDiv = $("<div>");
+    var rightDiv = $("<div>");
+    var newImg = $("<img>");
+    newDiv.addClass("row search-line");
+    leftDiv.addClass("tester col-xs-3");
+    rightDiv.addClass("col-xs-9");
+    newImg.addClass("search-image")
+    //console.log(pic || "dne")
+    newImg.attr("src", pic || "assets/images/empty.jpg");
+    newDiv.attr('id',id);
+    leftDiv.append(newImg);
+    rightDiv.text(title);
+    newDiv.append(leftDiv);
+    newDiv.append(rightDiv);
+    $("#search-results").append(newDiv);
+  }
+
 
   newDiv.addClass("row search-line");
   leftDiv.addClass("tester col-xs-3");
@@ -276,3 +302,22 @@ $('#search-results').on('click', '.search-line', function() {
     clearSearchResults();
   })
 });
+
+  $(".station").on("click", function() {
+    currentStation = $(this).attr("value");
+    $("#currentStation").text($(this).attr("station"));
+    $("#radio").attr("src", currentStation);
+    $("#radio")[0].play();
+    $("#play-btn").attr("class", "glyphicon glyphicon-pause")
+    playing = true;
+  });
+
+  $(document).on('click',function(){
+    if (!resultsHidden){
+      hideResults();
+    }
+  });
+
+  // $('#search-results').on('click','.search-line',function(){
+
+  // });
