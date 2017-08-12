@@ -78,7 +78,7 @@ body {
   }
 
   .btn-default:focus {
-    background-color: #ffa700; 
+    background-color: #ffa700;
   }
 
 /*Search Bar*/
@@ -193,7 +193,7 @@ body {
 
   #leftTab {
     cursor: pointer;
-    list-style: none; 
+    list-style: none;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -209,7 +209,7 @@ body {
 
   #rightTab {
     cursor: pointer;
-    list-style: none; 
+    list-style: none;
     position: fixed;
     z-index: 9;
     right: 0;
@@ -345,4 +345,8 @@ body {
     background-color: #ef6800;
     color: #202020;
     cursor: default;
+  }
+
+  .rightNavList, .leftNavList{
+    width:150px;
   }

@@ -8,7 +8,7 @@
 	<!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!-- Lodash -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
   <!-- Bootstrap CDN -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -43,8 +43,10 @@
 	</ul>
 
 	<div id="leftNav">
-		<p>Most Recent Search</p>
-		<div id="miniRecent"></div>
+		<div class="leftNavList">
+			<p>Most Recent Search</p>
+			<div id="miniRecent"></div>
+		</div>
 	</div>
 
 	<ul id="rightTab">
@@ -52,27 +54,29 @@
 	</ul>
 
 	<div id="rightNav">
-		<audio id="radio" src=""></audio>
-		<h5><b>Music Player</b></h5>
-	  <p class="station" station="Alternative" value="http://cabhs31.sonixcast.com:20254/;">Alternative</p>
-	  <!-- <p class="station" station="Blues" value="">Blues</p> -->
-	  <p class="station" station="Classical" value="http://whro.mediaplayer.whro.org/128">Classical</p>
-	  <p class="station" station="Classic Rock" value="http://s46.myradiostream.com:7608/;">Classic Rock</p>
-	  <p class="station" station="Country" value="http://lynx.prostreaming.net:8004/stream/;">Country</p>
-	  <p class="station" station="Dance" value="http://edmFeed.com:8000/edmFeed">Dance</p>
-	  <p class="station" station="Easy Listening" value="http://209.95.50.189:8074/stream/;">Easy Listening</p>
-	  <p class="station" station="Electronic" value="http://188.165.244.10:27015/;">Electronic</p>
-	  <p class="station" station="Hip-Hop/Rap" value="http://streaming.radio.co/s900bb350d/listen">Hip-Hop/Rap</p>
-	  <!-- <p class="station" station="Jazz" value="">Jazz</p> -->
-	  <p class="station" station="J-Pop" value="http://cabhs31.sonixcast.com:20002/;">J-Pop</p>
-	  <!-- <p class="station" station="New Age" value="">New Age</p> -->
-	  <p class="station" station="Oldies" value="http://192.95.18.39:5336/stream/;">Oldies</p>
-	  <!-- <p class="station" station="Pop" value="">Pop</p> -->
-	  <p class="station" station="R&amp;B/Soul" value="http://soulradio02.live-streams.nl">R&amp;B/Soul</p>
-	  <!-- <p class="station" station="Reggae" value="">Reggae</p> -->
-	  <!-- <p class="station" station="Rock" value="">Rock</p> -->
-	  <p class="station" station="Slow Jams" value="http://ritetimeradio.filehostia.com:8582/;">Slow Jams</p>
-	  <!-- <p class="station" station="World" value="">World</p> -->
+		<div class="rightNavList">
+			<audio id="radio" src=""></audio>
+			<h5><b>Music Player</b></h5>
+			<p class="station" station="Alternative" value="http://cabhs31.sonixcast.com:20254/;">Alternative</p>
+			<!-- <p class="station" station="Blues" value="">Blues</p> -->
+			<p class="station" station="Classical" value="http://whro.mediaplayer.whro.org/128">Classical</p>
+			<p class="station" station="Classic Rock" value="http://s46.myradiostream.com:7608/;">Classic Rock</p>
+			<p class="station" station="Country" value="http://lynx.prostreaming.net:8004/stream/;">Country</p>
+			<p class="station" station="Dance" value="http://edmFeed.com:8000/edmFeed">Dance</p>
+			<p class="station" station="Easy Listening" value="http://209.95.50.189:8074/stream/;">Easy Listening</p>
+			<p class="station" station="Electronic" value="http://188.165.244.10:27015/;">Electronic</p>
+			<p class="station" station="Hip-Hop/Rap" value="http://streaming.radio.co/s900bb350d/listen">Hip-Hop/Rap</p>
+			<!-- <p class="station" station="Jazz" value="">Jazz</p> -->
+			<p class="station" station="J-Pop" value="http://cabhs31.sonixcast.com:20002/;">J-Pop</p>
+			<!-- <p class="station" station="New Age" value="">New Age</p> -->
+			<p class="station" station="Oldies" value="http://192.95.18.39:5336/stream/;">Oldies</p>
+			<!-- <p class="station" station="Pop" value="">Pop</p> -->
+			<p class="station" station="R&amp;B/Soul" value="http://soulradio02.live-streams.nl">R&amp;B/Soul</p>
+			<!-- <p class="station" station="Reggae" value="">Reggae</p> -->
+			<!-- <p class="station" station="Rock" value="">Rock</p> -->
+			<p class="station" station="Slow Jams" value="http://ritetimeradio.filehostia.com:8582/;">Slow Jams</p>
+			<!-- <p class="station" station="World" value="">World</p> -->	
+		</div>
 	</div>
 
 	<div id="artistPage">
@@ -93,7 +97,7 @@
 			  <p>The contents below are in one &lt;div&gt; so everything can be changed with proper search content.</p>
 			  <p>Clicking on an artist will pop open a side panel with more description.</p>
 			  <p>All content is subject to change.</p>
-			</div>	
+			</div>
 
 			<div id="mainContent">
 				<div id="mostRecent" class="panel panel-default clearfix">
@@ -175,7 +179,7 @@
 				    </a>
 				  </div>
 				</div>
-				
+
 				<div id="nearbyConcerts" class="panel panel-default clearfix">
 				  <div class="panel-heading" id="nearby-concerts-heading">
 				    <h3 class="panel-title">Nearby Concerts</h3>
@@ -218,7 +222,7 @@
 
 		<div class="container-fluid" id="upcoming-concerts-display">
 		</div>
-		
+
 	</div><!-- Add content above this div -->
 
 	<nav id="bottomNav" class="navbar navbar-default navbar-fixed-bottom text-center">

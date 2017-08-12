@@ -59,6 +59,12 @@
     resultsHidden = true;
   }
 
+  $(document).on('click',function(){
+    if(!resultsHidden){
+      hideResults();
+    }
+  });
+
   function doAjax() {
     $("#search-results").empty();
     var songArray = [];
@@ -83,13 +89,13 @@
           displaySearch(noDuplicates[i].thumb, noDuplicates[i].title)
       }*/
     });
-    
+
     /*var queryURL = 'https://api.discogs.com/database/search?q='+song+'&key=JOwiPIVkZGKqzPMffeLo&secret=TTdaxTVwWBjataauUqtEjCGckNrSOmtk';
     $.ajax({
       url: queryURL,
       method: "GET"
     }).done(function(response) {
-      
+
     });*/
   }
 
@@ -108,7 +114,7 @@
     rightDiv.text(title);
     newDiv.append(leftDiv);
     newDiv.append(rightDiv);
-    $("#search-results").append(newDiv);    
+    $("#search-results").append(newDiv);
   }
 
   function displayArtist(pic, title, id) {
@@ -193,7 +199,7 @@
       hideResults();
     }
   });
-  
+
  	$("#upcoming-concerts").on("click", function() {
 	 	$("#home-page").hide();
 	 	$("#upcoming-concerts-display").show();
@@ -216,7 +222,7 @@
  				});
  		})
  	})
- 	
+
  	$("#boomboom").on("click", function() {
  		currentArtist = $(this).attr("value");
  	});
