@@ -8,7 +8,7 @@
 	<!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!-- Lodash -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
   <!-- Bootstrap CDN -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -49,13 +49,15 @@
 	</ul>
 
 	<div id="leftNav">
-		<a href="#">Home</a>
-		<a href="#">Recent Searches</a>
-		<div id="recent-searches"></div>
-	  <a href="#">Top Songs</a>
-		<div id="top-songs"></div>
-		<a href="#">New Releases</a>
-		<div id="new-releases"></div>
+		<div class="leftNavList">
+			<a href="#">Home</a>
+			<a href="#">Recent Searches</a>
+			<div id="recent-searches"></div>
+		  <a href="#">Top Songs</a>
+			<div id="top-songs"></div>
+			<a href="#">New Releases</a>
+			<div id="new-releases"></div>
+		</div>
 	</div>
 
 	<ul id="rightTab">
@@ -63,22 +65,24 @@
 	</ul>
 
 	<div id="rightNav">
-		<h5><b>Music Player</b></h5>
-	  <a href="#">Alternative</a>
-	  <a href="#">Blues</a>
-	  <a href="#">Classical</a>
-	  <a href="#">Country</a>
-	  <a href="#">Dance</a>
-	  <a href="#">Easy Listening</a>
-	  <a href="#">Electronic</a>
-	  <a href="#">Hip-Hop/Rap</a>
-	  <a href="#">Jazz</a>
-	  <a href="#">New Age</a>
-	  <a href="#">Pop</a>
-	  <a href="#">R&amp;B/Soul</a>
-	  <a href="#">Reggae</a>
-	  <a href="#">Rock</a>
-	  <a href="#">World</a>
+		<div class="rightNavList">
+			<h5><b>Music Player</b></h5>
+			<a href="#">Alternative</a>
+			<a href="#">Blues</a>
+			<a href="#">Classical</a>
+			<a href="#">Country</a>
+			<a href="#">Dance</a>
+			<a href="#">Easy Listening</a>
+			<a href="#">Electronic</a>
+			<a href="#">Hip-Hop/Rap</a>
+			<a href="#">Jazz</a>
+			<a href="#">New Age</a>
+			<a href="#">Pop</a>
+			<a href="#">R&amp;B/Soul</a>
+			<a href="#">Reggae</a>
+			<a href="#">Rock</a>
+			<a href="#">World</a>
+		</div>
 	</div>
 
 	<div id="artistPage">
@@ -99,7 +103,7 @@
 			  <p>The contents below are in one &lt;div&gt; so everything can be changed with proper search content.</p>
 			  <p>Clicking on an artist will pop open a side panel with more description.</p>
 			  <p>All content is subject to change.</p>
-			</div>	
+			</div>
 
 			<div id="mainContent">
 				<div id="mostRecent" class="panel panel-default clearfix">
@@ -181,7 +185,7 @@
 				    </a>
 				  </div>
 				</div>
-				
+
 				<div id="newReleases" class="panel panel-default clearfix">
 				  <div class="panel-heading" id="new-releases-heading">
 				    <h3 class="panel-title">New Releases</h3>

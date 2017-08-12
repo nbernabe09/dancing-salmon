@@ -23,18 +23,19 @@
       url: queryURL,
       method: "GET"
     }).done(function(response) {
+      console.log(response);
       var noDuplicates = _.uniqBy(response.results, function(list) { return list.title; });
       var numItems = 10;
       if(noDuplicates.length < numItems) {
           numItems = noDuplicates.length;
       }
       for(var i=0; i<numItems; i++) {
-          displaySearch(noDuplicates[i].thumb, noDuplicates[i].title)
+          displaySearch(noDuplicates[i].thumb, noDuplicates[i].title,noDuplicates[i].id);
       }
     });
   }
 
-  function displaySearch(pic, title) {
+  function displaySearch(pic, title, id) {
     var newDiv = $("<div>");
     var leftDiv = $("<div>");
     var rightDiv = $("<div>");
@@ -43,13 +44,14 @@
     leftDiv.addClass("tester col-xs-3");
     rightDiv.addClass("col-xs-9");
     newImg.addClass("search-image")
-    console.log(pic || "dne")
+    //console.log(pic || "dne")
     newImg.attr("src", pic || "assets/images/empty.jpg");
+    newDiv.attr('id',id);
     leftDiv.append(newImg);
     rightDiv.text(title);
     newDiv.append(leftDiv);
     newDiv.append(rightDiv);
-    $("#search-results").append(newDiv);    
+    $("#search-results").append(newDiv);
   }
 
 // Buttons
@@ -100,4 +102,11 @@
       hideResults();
     }
   });
-  
+
+  $(document).on('click',function(){
+    if (!resultsHidden){
+      hideResults();
+    }
+  })
+$('#search-results').on('click','.search-line',function(){
+});
