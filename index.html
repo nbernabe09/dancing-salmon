@@ -12,6 +12,8 @@
   <!-- Bootstrap CDN -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Moment.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <!-- Firebase Reference -->
@@ -21,7 +23,7 @@
 
   <div id="navbar" class="container-fluid">
   	<div class="col-xs-4">
-  		<div id="projectName">Project 1</div>
+  		<button id="homeBtn" type="button" class="btn btn-default"><span class="glyphicon glyphicon-home"></span></button>
   	</div>
   	<div class="col-xs-8">
 	    <form id="music-search" method="post">
@@ -41,13 +43,8 @@
 	</ul>
 
 	<div id="leftNav">
-		<a href="#">Home</a>
-		<a href="#">Recent Searches</a>
-		<div id="recent-searches"></div>
-	  <a href="#">Top Songs</a>
-		<div id="top-songs"></div>
-		<a href="#">New Releases</a>
-		<div id="new-releases"></div>
+		<p>Most Recent Search</p>
+		<div id="miniRecent"></div>
 	</div>
 
 	<ul id="rightTab">
@@ -67,7 +64,7 @@
 	  <p class="station" station="Electronic" value="http://188.165.244.10:27015/;">Electronic</p>
 	  <p class="station" station="Hip-Hop/Rap" value="http://streaming.radio.co/s900bb350d/listen">Hip-Hop/Rap</p>
 	  <!-- <p class="station" station="Jazz" value="">Jazz</p> -->
-	  <p class="station" station="Pop" value="http://cabhs31.sonixcast.com:20002/;">J-Pop</p>
+	  <p class="station" station="J-Pop" value="http://cabhs31.sonixcast.com:20002/;">J-Pop</p>
 	  <!-- <p class="station" station="New Age" value="">New Age</p> -->
 	  <p class="station" station="Oldies" value="http://192.95.18.39:5336/stream/;">Oldies</p>
 	  <!-- <p class="station" station="Pop" value="">Pop</p> -->

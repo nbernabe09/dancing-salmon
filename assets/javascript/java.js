@@ -198,21 +198,20 @@
 	 	$("#home-page").hide();
 	 	$("#upcoming-concerts-display").show();
 	 	$("#upcoming-concerts-display").html("<h1>" + currentArtist + "</h1>");
-	  $("#artistPage").css("width", "0");
+	  closeArtNav();
  		console.log(currentArtist);
  		var bandsInTown = new BitAPI();
  		bandsInTown.searchAPI(currentArtist).then((bitData)=>{
  				bitData.forEach((elem)=>{
- 					var newDiv = $("<div>")
- 					newDiv.append(elem.id);
- 					newDiv.append("<br>");
- 					newDiv.append(elem.date);
- 					newDiv.append("<br>");
- 					newDiv.append(elem.city);
- 					newDiv.append("<br>");
- 					newDiv.append(elem.venue);
- 					newDiv.append("<br>");
- 					newDiv.append("<a href ='" + elem.ticketURL + "'>Buy Tickets</a>");
+ 					var newDiv = $("<div>");
+          newDiv.addClass("concertInfo col-md-4 col-sm-6");
+          newDiv.append(moment(elem.date).format("ddd MMMM D, YYYY - h:mm A"));
+          newDiv.append("<br>");
+          newDiv.append(elem.venue);
+          newDiv.append("<br>");
+          newDiv.append(elem.city + ", " + elem.region);
+          newDiv.append("<br>");
+ 					newDiv.append("<a target='_blank' href ='" + elem.ticketURL + "'>Buy Tickets</a>");
  					$("#upcoming-concerts-display").append(newDiv)
  				});
  		})
@@ -221,6 +220,12 @@
  	$("#boomboom").on("click", function() {
  		currentArtist = $(this).attr("value");
  	});
+
+  $("#homeBtn").on("click", function() {
+    $("#upcoming-concerts-display").empty();
+    $("#upcoming-concerts-display").hide();
+    $("#home-page").show();
+  })
 
   $(".station").on("click", function() {
     currentStation = $(this).attr("value");

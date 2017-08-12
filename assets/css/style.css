@@ -173,7 +173,7 @@ body {
     padding-top: 50px;
   }
 
-  #leftNav a, #rightNav p, #rightNav h5{
+  #leftNav p, #rightNav p, #rightNav h5{
     padding: 1vh 2% 1vh 8%;
     text-decoration: none;
     font-size: 1.7vw;
@@ -182,7 +182,7 @@ body {
     transition: 0.3s;
   }
 
-  #leftNav a:hover, #rightNav p:hover {
+  #leftNav p:hover, #rightNav p:hover {
     color: #ef9d00;
     cursor: pointer;
   }
@@ -319,6 +319,15 @@ body {
 
   .thumbnail img {
     width: 200px;
+  }
+
+/*Concert Info Page*/
+  .concertInfo {
+    margin-bottom: 10px;
+  }
+
+  .concertInfo:hover {
+    background-color: #141414;
   }
 
 /*Bottom Navbar*/
