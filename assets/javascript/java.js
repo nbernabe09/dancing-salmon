@@ -8,6 +8,8 @@
   var currentStation = "";
   var discogsCall = new DiscogsAPIUtil();
 
+  $("#mainScreen").hide();
+
 // Functions
   function openLeftNav() {
     $("#leftNav").css("width", "20%");
@@ -317,14 +319,18 @@
       discogsCall.releaseAPI(id).then(function(res) {
         var mainScreen   =   $('#mainScreen');
         var baseURL      =   'https://www.youtube.com/embed/'
-        var youtubeURL   =   res.videos[0].uri.slice(32);
+        var youtubeURL   =   res.videos[0].uri.slice(32) + "?autoplay=1";
         var iframe       =   $('<iframe>');
 
         iframe.attr('src', baseURL + youtubeURL);
-        iframe.attr('frameborder', 0);
+        iframe.attr('frameborder', '0');
+        iframe.attr('width', '560');
+        iframe.attr('height', '315');
         iframe.attr('allowfullscreen');
         mainScreen.html(iframe);
         clearSearchResults();
+          $("#mainScreen").slideDown(250);
+        
       })
     }
   });
