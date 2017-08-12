@@ -103,8 +103,9 @@
     leftDiv.addClass("tester col-xs-3");
     rightDiv.addClass("col-xs-9");
     newImg.addClass("search-image")
-    console.log(pic || "dne")
+    //console.log(pic || "dne")
     newImg.attr("src", pic || "assets/images/empty.jpg");
+    newDiv.attr('id',id);
     leftDiv.append(newImg);
     rightDiv.text(title);
     newDiv.append(leftDiv);
