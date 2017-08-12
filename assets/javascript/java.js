@@ -54,16 +54,11 @@
     resultsHidden = false;
   }
 
-    function hideResults() {
+  function hideResults() {
     $("#search-results").css("visibility", "hidden");
     resultsHidden = true;
   }
 
-  $(document).on('click',function(){
-    if(!resultsHidden){
-      hideResults();
-    }
-  });
 
   function doAjax() {
     $("#search-results").empty();
@@ -248,6 +243,6 @@
     }
   });
 
-  $('#search-results').on('click','.search-line',function(){
+  // $('#search-results').on('click','.search-line',function(){
     
-  });
+  // });

@@ -224,7 +224,7 @@ body {
   }
 
   .leftNavList, .rightNavList {
-    /*width:110px;*/
+    width:150px;
   }
 
 /*Artist Page*/
@@ -349,8 +349,4 @@ body {
     background-color: #ef6800;
     color: #202020;
     cursor: default;
-  }
-
-  .rightNavList, .leftNavList{
-    width:150px;
   }
