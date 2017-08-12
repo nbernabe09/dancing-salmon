@@ -77,23 +77,20 @@
     var song = $("#searchBox").val();
     discogsCall.queryAPI(song).then((resp) => {
       var sr = discogsCall.newSR(resp.results);
-      var tmpId = sr.release[0].id;
-      discogsCall.releaseAPI(tmpId).then(function(res) {
-        console.log("%%%");
-        console.log(res.videos[0].uri);
-        console.log("%%%");
+     
+      $("#search-results").append("<p>Artists</p>");
+      var noDuplicatesArtist = _.uniqBy(sr.artist, function(list) { return list.title; });
+      noDuplicatesArtist.forEach(function(elem) {
+        displaySearch(elem.thumb, elem.title, "artist", elem.id)
+        /*console.log(elem);*/
       })
-      sr.release.forEach(function(elem) {
-        displayArtist(elem.thumb, elem.title, elem.id);
+
+      $("#search-results").append("<hr><p>Releases</p>");
+
+      var noDuplicatesRelease = _.uniqBy(sr.release, function(list) { return list.title; });
+      noDuplicatesRelease.forEach(function(elem) {
+        displaySearch(elem.thumb, elem.title, "release", elem.id)
       })
-      /*var noDuplicates = _.uniqBy(sr.artist, function(list) { return list.title; });/
-        var numItems = 10;
-        if(noDuplicates.length < numItems) {
-            numItems = noDuplicates.length;
-        }
-        for(var i=0; i<numItems; i++) {
-            displaySearch(noDuplicates[i].thumb, noDuplicates[i].title)
-        }*/
     });
 
     /*var queryURL = 'https://api.discogs.com/database/search?q='+song+'&key=JOwiPIVkZGKqzPMffeLo&secret=TTdaxTVwWBjataauUqtEjCGckNrSOmtk';
@@ -117,12 +114,13 @@
       var rightDiv = $("<div>");
       var newImg = $("<img>");
       newDiv.addClass("row search-line");
-      leftDiv.addClass("tester col-xs-3");
+      leftDiv.addClass("search-image-holder col-xs-3");
       rightDiv.addClass("col-xs-9");
       newImg.addClass("search-image")
       //console.log(pic || "dne")
       newImg.attr("src", pic || "assets/images/empty.jpg");
       newDiv.attr('id',id);
+      newDiv.attr('type', type)
       leftDiv.append(newImg);
       rightDiv.text(title);
       newDiv.append(leftDiv);
@@ -132,11 +130,13 @@
 
 
     newDiv.addClass("row search-line");
-    leftDiv.addClass("tester col-xs-3");
+    leftDiv.addClass("search-image-holder col-xs-3");
     rightDiv.addClass("col-xs-9");
     newImg.addClass("search-image")
-    console.log(pic || "dne")
+    /*console.log(pic || "dne")*/
     newDiv.attr('id', id);
+    newDiv.attr('type', type);
+    newDiv.attr('title', title);
     newImg.attr("src", pic || "assets/images/empty.jpg");
     leftDiv.append(newImg);
     rightDiv.text(title);
@@ -243,38 +243,9 @@
     }
   });
 
-  $("#upcoming-concerts").on("click", function() {
-    $("#home-page").hide();
-    $("#upcoming-concerts-display").show();
-    $("#upcoming-concerts-display").html("<h1>" + currentArtist + "</h1>");
-    closeArtNav();
-    console.log(currentArtist);
-    var bandsInTown = new BitAPI();
-    bandsInTown.searchAPI(currentArtist).then((bitData) => {
-      bitData.forEach((elem) => {
-        var newDiv = $("<div>");
-        newDiv.addClass("concertInfo col-md-4 col-sm-6");
-        newDiv.append(moment(elem.date).format("ddd MMMM D, YYYY - h:mm A"));
-        newDiv.append("<br>");
-        newDiv.append(elem.venue);
-        newDiv.append("<br>");
-        newDiv.append(elem.city + ", " + elem.region);
-        newDiv.append("<br>");
-        newDiv.append("<a target='_blank' href ='" + elem.ticketURL + "'>Buy Tickets</a>");
-        $("#upcoming-concerts-display").append(newDiv)
-      });
-    })
-  })
-
   $("#boomboom").on("click", function() {
     currentArtist = $(this).attr("value");
   });
-
-  $("#homeBtn").on("click", function() {
-    $("#upcoming-concerts-display").empty();
-    $("#upcoming-concerts-display").hide();
-    $("#home-page").show();
-  })
 
   $(".station").on("click", function() {
     currentStation = $(this).attr("value");
@@ -287,20 +258,72 @@
 
   // Adds youtube video to main screen
   $('#search-results').on('click', '.search-line', function() {
+    var currentArtist = $(this).attr("title");
     var id = $(this).attr('id');
-    $('#mainScreen').addClass("videoWrapper");
-    discogsCall.releaseAPI(id).then(function(res) {
-      var mainScreen   =   $('#mainScreen');
-      var baseURL      =   'https://www.youtube.com/embed/'
-      var youtubeURL   =   res.videos[0].uri.slice(32);
-      var iframe       =   $('<iframe>');
+    var type = $(this).attr("type");
 
-      iframe.attr('src', baseURL + youtubeURL);
-      iframe.attr('frameborder', 0);
-      iframe.attr('allowfullscreen');
-      mainScreen.html(iframe);
-      clearSearchResults();
-    })
+    if (type === "artist") {
+      $("#artistPage").show(500);
+
+      $("#about-artist").empty();
+      var queryURL = 'https://en.wikipedia.org/w/api.php?action=opensearch&search=' + currentArtist + '&format=json&callback=?';
+      $.ajax({
+        url: queryURL,
+        type: "GET",
+        contentType: "application/json; charset=utf-8",
+        async: false,
+        dataType: "json",
+        method: "GET"
+      }).done(function(response) {
+        console.log(response);
+        $("#about-artist").append(response[2][0]);
+      });
+  
+      $("#top-songs").empty();
+      discogsCall.queryAPI(currentArtist).then((resp) => {
+        var sr = discogsCall.newSR(resp.results);
+
+        var noDuplicatesRelease = _.uniqBy(sr.release, function(list) { return list.title; });
+        noDuplicatesRelease.forEach(function(elem, index) {
+          $("#top-songs").append("<p>" + (index + 1) + ". " + elem.title + "</p>");
+        });
+      });
+
+      $("#upcoming-concerts").empty();
+      var bandsInTown = new BitAPI();
+      bandsInTown.searchAPI(currentArtist).then((bitData) => {
+        bitData.forEach((elem) => {
+          var newDiv = $("<div>");
+          newDiv.addClass("concert-info col-md-4 col-sm-6");
+          newDiv.append(moment(elem.date).format("ddd MMMM D, YYYY - h:mm A"));
+          newDiv.append("<br>");
+          newDiv.append(elem.venue);
+          newDiv.append("<br>");
+          newDiv.append(elem.city + ", " + elem.region);
+          newDiv.append("<br>");
+          newDiv.append("<a target='_blank' href ='" + elem.ticketURL + "'>Buy Tickets</a>");
+          $("#upcoming-concerts").append(newDiv)
+        });
+      })
+
+  
+
+
+    } else if (type === "release") {
+      $('#mainScreen').addClass("videoWrapper");
+      discogsCall.releaseAPI(id).then(function(res) {
+        var mainScreen   =   $('#mainScreen');
+        var baseURL      =   'https://www.youtube.com/embed/'
+        var youtubeURL   =   res.videos[0].uri.slice(32);
+        var iframe       =   $('<iframe>');
+
+        iframe.attr('src', baseURL + youtubeURL);
+        iframe.attr('frameborder', 0);
+        iframe.attr('allowfullscreen');
+        mainScreen.html(iframe);
+        clearSearchResults();
+      })
+    }
   });
 
   $(".station").on("click", function() {
