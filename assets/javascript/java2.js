@@ -8,7 +8,7 @@
   var currentStation = "";
   var discogsCall = new DiscogsAPIUtil();
 
-  $("#mainScreen").hide();
+  $("#videoPlayer").hide();
 
 // Functions
   function openLeftNav() {
@@ -62,12 +62,6 @@
     $("#search-results").css("visibility", "hidden");
     resultsHidden = true;
   }
-
-  function hideResults() {
-    $("#search-results").css("visibility", "hidden");
-    resultsHidden = true;
-  }
-
 
   function doAjax() {
     $("#search-results").empty();
@@ -303,12 +297,12 @@
 
         iframe.attr('src', baseURL + youtubeURL);
         iframe.attr('frameborder', '0');
-        iframe.attr('width', '560');
-        iframe.attr('height', '315');
+        // iframe.attr('width', '560');
+        // iframe.attr('height', '315');
         iframe.attr('allowfullscreen');
         mainScreen.html(iframe);
         clearSearchResults();
-          $("#mainScreen").slideDown(250);
+          $("#videoPlayer").slideDown(250);
         
       })
     }
