@@ -1,0 +1,43 @@
+/*Navbar Top*/
+	#search:hover {
+		cursor: pointer;
+	}
+
+	.station:hover {
+		cursor: pointer;
+	}
+
+	#nowPlaying {
+		display: none;
+	}
+
+/*Search Results*/
+	.search-image {
+    width: 10vh;
+  }
+
+  .search-image-holder {
+    min-height: 10vh;
+  }
+
+  .search-line {
+    padding: .1vh 2%;
+  }
+
+  .search-line:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+  }
+
+  #search-results {
+    padding: 2px 10px;
+    width: 100%;
+    min-height: 20vh;
+    max-height: 40vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    visibility: hidden;
+    font-weight: bold;
+    word-wrap: break-word;
+  }
+ 

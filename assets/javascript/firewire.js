@@ -7,7 +7,7 @@ var config = {
     messagingSenderId: "848666248371"
 };
 
-$.getScript("https://www.gstatic.com/firebasejs/4.2.0/firebase.js")
+// $.getScript("https://www.gstatic.com/firebasejs/4.2.0/firebase.js")
 
 firebase.initializeApp(config);
 

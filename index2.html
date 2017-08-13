@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- FavIcon -->
+	<link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+	<title>Project 1 (alt)</title>
+	<!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Lodash -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+  <!-- Bootstrap CDN -->
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+	<!-- Ionicons CDN -->
+	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Moment.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style2.css">
+  <!-- Firebase Reference -->
+  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <a class="navbar-brand" href="#"><span class="ion-home"></span></a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTop" aria-controls="navbarTop" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarTop">
+	    <ul class="navbar-nav mr-auto">
+	    	<li>
+					<div class="col-auto">
+			      <label class="sr-only" for="inlineFormInputGroup">Search</label>
+			      <div class="input-group mb-2 mb-sm-0">
+			        <input type="text" class="form-control" id="searchBox" autocomplete="off" placeholder="Music Search...">
+			        <div class="input-group-addon" id="search"><span class="ion-search"></span></div>
+			      </div>
+			    </div>
+	    	</li>
+	      <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Radio
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	        	<audio id="radio" src=""></audio>
+	          <a class="dropdown-item station" station="Alternative" value="http://cabhs31.sonixcast.com:20254/;">Alternative</a>
+						<a class="dropdown-item station" station="Classical" value="http://whro.mediaplayer.whro.org/128">Classical</a>
+						<a class="dropdown-item station" station="Classic Rock" value="http://s46.myradiostream.com:7608/;">Classic Rock</a>
+						<a class="dropdown-item station" station="Country" value="http://lynx.prostreaming.net:8004/stream/;">Country</a>
+						<a class="dropdown-item station" station="Dance" value="http://edmFeed.com:8000/edmFeed">Dance</a>
+						<a class="dropdown-item station" station="Easy Listening" value="http://209.95.50.189:8074/stream/;">Easy Listening</a>
+						<a class="dropdown-item station" station="Electronic" value="http://188.165.244.10:27015/;">Electronic</a>
+						<a class="dropdown-item station" station="Hip-Hop/Rap" value="http://streaming.radio.co/s900bb350d/listen">Hip-Hop/Rap</a>
+						<a class="dropdown-item station" station="J-Pop" value="http://cabhs31.sonixcast.com:20002/;">J-Pop</a>
+						<a class="dropdown-item station" station="J-Rock" value="http://cabhs30.sonixcast.com:9508/;">J-Rock</a>
+						<a class="dropdown-item station" station="K-Pop" value="http://184.95.62.170:9026/;">K-Pop</a>
+						<a class="dropdown-item station" station="Oldies" value="http://192.95.18.39:5336/stream/;">Oldies</a>
+						<a class="dropdown-item station" station="R&amp;B/Soul" value="http://soulradio02.live-streams.nl">R&amp;B/Soul</a>
+						<a class="dropdown-item station" station="Slow Jams" value="http://ritetimeradio.filehostia.com:8582/;">Slow Jams</a>
+	        </div>
+	      </li>
+	    </ul>
+	    <span class="navbar-text" id="nowPlaying">
+	    	<div class="btn-group btn-group-sm" role="group">
+		    	<button type="button" class="btn btn-secondary" id="musicPlay"><span class="ion-play" id="play-btn"></span></button>
+	  			<button type="button" class="btn btn-secondary" id="musicStop"><span class="ion-stop"></span></button>
+	    	</div>
+	    	Now playing: <span id="currentStation"></span>
+	    </span>
+	  </div>
+	</nav>
+
+	<div class="jumbotron" id="search-results"></div>
+
+	<!-- JavaScript -->
+	<script type="text/javascript" src="assets/javascript/firewire.js"></script>
+	<script type="text/javascript" src="assets/javascript/MusixMatchAPI.js"></script>
+	<script type="text/javascript" src="assets/javascript/BitAPI.js"></script>
+	<script type="text/javascript" src="assets/javascript/DiscogsAPIUtil.js"></script>
+	<script type="text/javascript" src="assets/javascript/java2.js"></script>
+</body>
+</html>
