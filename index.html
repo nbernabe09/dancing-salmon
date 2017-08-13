@@ -44,7 +44,7 @@
 
 	<div id="leftNav">
 		<div class="leftNavList">
-			<p>Most Recent Search</p>
+			<h5>Most Recent Search</h5>
 			<div id="miniRecent"></div>
 		</div>
 	</div>
@@ -82,19 +82,28 @@
 	</div>
 
 	<div id="artistPage">
-	  <p id="closeArtist">&times;</p>
-	  <h3>About</h3>
-	  <p id="about-artist"></p>
-	  <h3>Top Songs</h3>
-	  <p id="top-songs"></p>
-	  <h3>Upcoming Concerts</<h3>
-	  <h4 id="upcoming-concerts"></h4>
+		<div class="container-fluid">
+			<img id="artist-image">
+			<a id="closeArtist">&times;</a>
+			<h3>About</h3>
+			<p id="about-artist"></p>
+			<div class="row">
+				<div class="artist-sub col-md-5">
+				  <h3>Top Songs</h3>
+				  <p id="top-songs"></p>
+				</div>
+				<div class="artist-sub col-md-6">
+				  <h3>Upcoming Concerts</h3>
+				  <p id="upcoming-concerts"></p>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<div class="main"><!-- Do not change this div -->
 		<div class="container-fluid" id="home-page">
 
-			<div id="mainScreen" class="jumbotron">
+			<div id="mainScreen" class="jumbotron center-block">
 			  <h1>Project 1</h1>
 <!-- 			  <p>Music Application</p>
 <p>This area will turn into a YouTube video when searches are made.</p>
