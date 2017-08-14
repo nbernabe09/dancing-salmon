@@ -243,7 +243,8 @@
       $("#about-artist").empty();
       discogsCall.artistAPI(id).then((resp) => {
         console.log(resp);
-        $("#artist-image").attr("src", resp.thumb)
+        $("#artistPageTitle").text(currentArtist);
+        $("#artist-image").attr("src", resp.thumb);
         $("#about-artist").append(resp.profile);
       });
 
@@ -259,13 +260,13 @@
       //   $("#about-artist").append(response[2][0]);
       // });
   
-      $("#top-songs").empty();
+      $("#releases").empty();
       discogsCall.queryAPI(currentArtist).then((resp) => {
         var sr = discogsCall.newSR(resp.results);
 
         var noDuplicatesRelease = _.uniqBy(sr.release, function(list) { return list.title; });
         noDuplicatesRelease.forEach(function(elem, index) {
-          $("#top-songs").append("<p>" + (index + 1) + ". " + elem.title + "</p>");
+          $("#releases").append("<p>" + (index + 1) + ". " + elem.title + "</p>");
         });
       });
 
@@ -274,7 +275,7 @@
       bandsInTown.searchAPI(currentArtist).then((bitData) => {
         bitData.forEach((elem) => {
           var newDiv = $("<div>");
-          newDiv.addClass("concert-info col-md-4 col-sm-6");
+          newDiv.addClass("concert-info");
           newDiv.append(moment(elem.date).format("ddd MMMM D, YYYY - h:mm A"));
           newDiv.append("<br>");
           newDiv.append(elem.venue);

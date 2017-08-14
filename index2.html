@@ -26,7 +26,7 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	  <a class="navbar-brand" href="#"><span class="ion-home"></span></a>
+	  <a class="navbar-brand" id="home-btn"><span class="ion-home"></span></a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTop" aria-controls="navbarTop" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
@@ -75,6 +75,25 @@
 	  </div>
 	</nav>
 
+	<!-- <div id="artistPage">
+		<div class="container-fluid">
+			<img id="artist-image">
+			<a id="closeArtist">&times;</a>
+			<h3>About</h3>
+			<p id="about-artist"></p>
+			<div class="row">
+				<div class="artist-sub col-md-5">
+				  <h3>Released Albums</h3>
+				  <p id="releases"></p>
+				</div>
+				<div class="artist-sub col-md-6">
+				  <h3>Upcoming Concerts</h3>
+				  <p id="upcoming-concerts"></p>
+				</div>
+			</div>
+		</div>
+	</div> -->
+
 	<div class="jumbotron" id="search-results">
 		<img id="salmon" src="assets/images/salmon.png">
 	</div>
@@ -83,6 +102,34 @@
 		<div class="container">
 			<div id="mainScreen"></div>
 		</div>
+	</div>
+
+	<!-- Button trigger modal -->
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#artistPage2">
+	  Launch Potential New Artist Page
+	</button>
+
+	<!-- Modal -->
+	<div class="modal fade" id="artistPage2" tabindex="-1" role="dialog" aria-labelledby="artistPageTitle" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="artistPageTitle">Artist Page</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        <h3>About</h3>
+					<p id="about-artist"></p>
+				  <h3>Upcoming Concerts</h3>
+				  <p id="upcoming-concerts"></p>
+				</div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+	  </div>
 	</div>
 
 	<!-- JavaScript -->
