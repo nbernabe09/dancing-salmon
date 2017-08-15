@@ -21,235 +21,151 @@
 </head>
 <body>
 
-  <div id="navbar" class="container-fluid">
-  	<div class="col-xs-4">
-  		<button id="homeBtn" type="button" class="btn btn-default"><span class="glyphicon glyphicon-home"></span></button>
-  	</div>
-  	<div class="col-xs-8">
-	    <form id="music-search" method="post">
+  <div id="navbar" class="nav container-fluid">
+  	<div class="col-xs-12">
+	    <form id="musicSearch" class="music-search" method="post">
 	      <div class="form-group">
 	      	<div class="input-group">
-		        <input type="text" class="form-control" id="searchBox" autocomplete="off" placeholder="Music Search...">
-	    			<span id="search" class="input-group-addon glyphicon glyphicon-search search-btn"></span>
+		        <input type="text" class="form-control searchBox" id="searchBox" autocomplete="off" placeholder="Music Search...">
+	    			<span id="search" class="search input-group-addon glyphicon glyphicon-search search-btn"></span>
 	      	</div>
-		      <div id="search-results"></div>
+		      <div id="searchResults" class="search-results"></div>
 	      </div>
 	    </form>
   	</div>
   </div>
 
-	<ul id="leftTab">
-		<li><span id="leftBurger">&#9776;</span></li>
+	<ul id="leftTab" class="left-tab">
+		<li><span class="left-burger">&#9776;</span></li>
 	</ul>
 
-	<div id="leftNav">
-		<div class="leftNavList">
+	<div id="leftNav" class="left-nav">
+		<div class="leftnav-list">
 			<h5>Most Recent Search</h5>
-			<div id="miniRecent"></div>
 		</div>
 	</div>
 
-	<ul id="rightTab">
-		<li><span id="rightBurger">&#9776;</span></li>
+	<ul id="rightTab" class="right-tab">
+		<li><span class="right-burger">&#9776;</span></li>
 	</ul>
 
-	<div id="rightNav">
-		<div class="rightNavList">
+	<div id="rightNav" class="right-nav">
+		<div id="stationList" class="right-nav-list">
 			<audio id="radio" src=""></audio>
 			<h5><b>Music Player</b></h5>
-			<p class="station" station="Alternative" value="http://cabhs31.sonixcast.com:20254/;">Alternative</p>
-			<!-- <p class="station" station="Blues" value="">Blues</p> -->
-			<p class="station" station="Classical" value="http://whro.mediaplayer.whro.org/128">Classical</p>
-			<p class="station" station="Classic Rock" value="http://s46.myradiostream.com:7608/;">Classic Rock</p>
-			<p class="station" station="Country" value="http://lynx.prostreaming.net:8004/stream/;">Country</p>
-			<p class="station" station="Dance" value="http://edmFeed.com:8000/edmFeed">Dance</p>
-			<p class="station" station="Easy Listening" value="http://209.95.50.189:8074/stream/;">Easy Listening</p>
-			<p class="station" station="Electronic" value="http://188.165.244.10:27015/;">Electronic</p>
-			<p class="station" station="Hip-Hop/Rap" value="http://streaming.radio.co/s900bb350d/listen">Hip-Hop/Rap</p>
-			<!-- <p class="station" station="Jazz" value="">Jazz</p> -->
-			<p class="station" station="J-Pop" value="http://cabhs31.sonixcast.com:20002/;">J-Pop</p>
-			<p class="station" station="J-Rock" value="http://cabhs30.sonixcast.com:9508/;">J-Rock</p>
-			<p class="station" station="K-Pop" value="http://184.95.62.170:9026/;">K-Pop</p>
-			<!-- <p class="station" station="New Age" value="">New Age</p> -->
-			<p class="station" station="Oldies" value="http://192.95.18.39:5336/stream/;">Oldies</p>
-			<!-- <p class="station" station="Pop" value="">Pop</p> -->
-			<p class="station" station="R&amp;B/Soul" value="http://soulradio02.live-streams.nl">R&amp;B/Soul</p>
-			<!-- <p class="station" station="Reggae" value="">Reggae</p> -->
-			<!-- <p class="station" station="Rock" value="">Rock</p> -->
-			<p class="station" station="Slow Jams" value="http://ritetimeradio.filehostia.com:8582/;">Slow Jams</p>
-			<!-- <p class="station" station="World" value="">World</p> -->	
 		</div>
 	</div>
 
-	<div id="artistPage">
+	<div id="artistPage" class="artist-page">
 		<div class="container-fluid">
-			<img id="artist-image">
-			<a id="closeArtist">&times;</a>
+			<img id="artistImage" class="artist-image">
+			<a id="closeArtist" class="close-artist">&times;</a>
 			<h3>About</h3>
-			<p id="about-artist"></p>
+			<p id="aboutArtist"></p>
 			<div class="row">
 				<div class="artist-sub col-md-5">
 				  <h3>Top Songs</h3>
-				  <p id="top-songs"></p>
+				  <p id="topSongs"></p>
 				</div>
 				<div class="artist-sub col-md-6">
 				  <h3>Upcoming Concerts</h3>
-				  <p id="upcoming-concerts"></p>
+				  <p id="upcomingConcerts"></p>
 				</div>
 			</div>
 		</div>
 	</div>
 
+	<div id="mainScreen" class="main-screen center-block">
+	</div>
+
 	<div class="main"><!-- Do not change this div -->
-		<div class="container-fluid" id="home-page">
-
-			<div id="mainScreen" class="jumbotron center-block">
-			  <h1>Project 1</h1>
-			  <!-- <p>Music Application</p>
-				<p>This area will turn into a YouTube video when searches are made.</p>
-				<p>The contents below are in one &lt;div&gt; so everything can be changed with proper search content.</p>
-				<p>Clicking on an artist will pop open a side panel with more description.</p>
-				<p>All content is subject to change.</p> -->
+		<div class="panel panel-default clearfix">
+			<div class="panel-heading recent">
+				<h3 class="panel-title">Most Recent Songs</h3>
 			</div>
-
-			<div id="mainContent">
-				<div id="mostRecent" class="panel panel-default clearfix">
-				  <div class="panel-heading" id="most-recent-heading">
-				    <h3 class="panel-title">Most Recent Searches</h3>
-				  </div>
-				  <div class="col-xs-6 col-md-3">
-				    <a class="thumbnail">
-				      <img src="assets/images/empty.jpg">
-				      <div class="caption">
-				        <h3>Unknown Album</h3>
-				      </div>
-				    </a>
-				  </div>
-				  <div class="col-xs-6 col-md-3">
-				    <a class="thumbnail">
-				      <img src="assets/images/empty.jpg">
-				      <div class="caption">
-				        <h3>Unknown Song</h3>
-				      </div>
-				    </a>
-				  </div>
-				  <div class="col-xs-6 col-md-3">
-				    <a id="boomboom" class="thumbnail artist" value="Reel Big Fish">
-				      <img src="assets/images/empty.jpg">
-				      <div class="caption">
-				        <h3 class="artist">Reel Big Fish</h3>
-				      </div>
-				    </a>
-				  </div>
-				  <div class="col-xs-6 col-md-3">
-				    <a class="thumbnail">
-				      <img src="assets/images/empty.jpg">
-				      <div class="caption">
-				        <h3>Unknown Album</h3>
-				      </div>
-				    </a>
-				  </div>
-				</div>
-
-				<div id="topSongs" class="panel panel-default clearfix">
-				  <div class="panel-heading" id="top-songs-heading">
-				    <h3 class="panel-title">Top Songs</h3>
-				  </div>
-				  <div class="col-xs-6 col-md-3">
-				    <a class="thumbnail">
-				      <img src="assets/images/empty.jpg">
-				      <div class="caption">
-				        <h3>Unknown Song</h3>
-				      	<p class="artist">Unknown Artist</p>
-				      </div>
-				    </a>
-				  </div>
-				  <div class="col-xs-6 col-md-3">
-				    <a class="thumbnail">
-				      <img src="assets/images/empty.jpg">
-				      <div class="caption">
-				        <h3>Unknown Song</h3>
-				      	<p class="artist">Unknown Artist</p>
-				      </div>
-				    </a>
-				  </div>
-				  <div class="col-xs-6 col-md-3">
-				    <a class="thumbnail">
-				      <img src="assets/images/empty.jpg">
-				      <div class="caption">
-				        <h3>Unknown Song</h3>
-				      	<p class="artist">Unknown Artist</p>
-				      </div>
-				    </a>
-				  </div>
-				  <div class="col-xs-6 col-md-3">
-				    <a class="thumbnail">
-				      <img src="assets/images/empty.jpg">
-				      <div class="caption">
-				        <h3>Unknown Song</h3>
-				      	<p class="artist">Unknown Artist</p>
-				      </div>
-				    </a>
-				  </div>
-				</div>
-
-				<div id="nearbyConcerts" class="panel panel-default clearfix">
-				  <div class="panel-heading" id="nearby-concerts-heading">
-				    <h3 class="panel-title">Nearby Concerts</h3>
-				  </div>
-				  <div class="col-xs-6 col-md-3">
-				    <a class="thumbnail">
-				      <img src="assets/images/empty.jpg">
-				      <div class="caption">
-				        <h3>Unknown Location</h3>
-				      </div>
-				    </a>
-				  </div>
-				  <div class="col-xs-6 col-md-3">
-				    <a class="thumbnail">
-				      <img src="assets/images/empty.jpg">
-				      <div class="caption">
-				        <h3>Unknown Location</h3>
-				      </div>
-				    </a>
-				  </div>
-				  <div class="col-xs-6 col-md-3">
-				    <a class="thumbnail">
-				      <img src="assets/images/empty.jpg">
-				      <div class="caption">
-				        <h3>Unknown Location</h3>
-				      </div>
-				    </a>
-				  </div>
-				  <div class="col-xs-6 col-md-3">
-				    <a class="thumbnail">
-				      <img src="assets/images/empty.jpg">
-				      <div class="caption">
-				        <h3>Unknown Location</h3>
-				      </div>
-				    </a>
-				  </div>
-				</div>
+			<div id="recSingles">
+				<div class="col-xs-6 col-md-3">
+			      <img class="single-img" src="assets/images/empty.jpg">
+			      <div class="caption">
+			      	<h3>Unknown Song</h3>
+			      	<p class="artist">Unknown Artist</p>
+			    	</div>
+			  </div>
+				<div class="col-xs-6 col-md-3">
+			      <img class="single-img" src="assets/images/empty.jpg">
+			      <div class="caption">
+			      	<h3>Unknown Song</h3>
+			      	<p class="artist">Unknown Artist</p>
+			    	</div>
+			  </div>
+				<div class="col-xs-6 col-md-3">
+			      <img class="single-img" src="assets/images/empty.jpg">
+			      <div class="caption">
+			      	<h3>Unknown Song</h3>
+			      	<p class="artist">Unknown Artist</p>
+			    	</div>
+			  </div>
+				<div class="col-xs-6 col-md-3">
+			      <img class="single-img" src="assets/images/empty.jpg">
+			      <div class="caption">
+			      	<h3>Unknown Song</h3>
+			      	<p class="artist">Unknown Artist</p>
+			    	</div>
+			  </div>
 			</div>
 		</div>
-	</div><!-- Add content above this div -->
 
-	<nav id="bottomNav" class="navbar navbar-default navbar-fixed-bottom text-center">
+		<div class="panel panel-default clearfix">
+			<div class="panel-heading top">
+				<h3 class="panel-title">Top Songs</h3>
+			</div>
+			<div id="topSingles">
+				<div class="col-xs-6 col-md-3">
+			      <img class="single-img" src="assets/images/empty.jpg">
+			      <div class="caption">
+			      	<h3>Unknown Song</h3>
+			      	<p class="artist">Unknown Artist</p>
+			    	</div>
+			  </div>
+				<div class="col-xs-6 col-md-3">
+			      <img class="single-img" src="assets/images/empty.jpg">
+			      <div class="caption">
+			      	<h3>Unknown Song</h3>
+			      	<p class="artist">Unknown Artist</p>
+			    	</div>
+			  </div>
+				<div class="col-xs-6 col-md-3">
+			      <img class="single-img" src="assets/images/empty.jpg">
+			      <div class="caption">
+			      	<h3>Unknown Song</h3>
+			      	<p class="artist">Unknown Artist</p>
+			    	</div>
+			  </div>
+				<div class="col-xs-6 col-md-3">
+			      <img class="single-img" src="assets/images/empty.jpg">
+			      <div class="caption">
+			      	<h3>Unknown Song</h3>
+			      	<p class="artist">Unknown Artist</p>
+			    	</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<nav id="bottomNav" class="bottomNav navbar navbar-default navbar-fixed-bottom text-center">
 	  <div class="container-fluid">
 	    <div class="btn-group" role="group">
-			  <!-- <button id="musicBack" type="button" class="btn btn-default"><span class="glyphicon glyphicon-step-backward"></span></button> -->
-			  <button id="musicPlay" type="button" class="btn btn-default"><span id="play-btn" class="glyphicon glyphicon-play"></span></button>
+			  <button id="musicPlay" type="button" class="btn btn-default"><span id="playBtn" class="glyphicon glyphicon-play"></span></button>
 			  <button id="musicStop" type="button" class="btn btn-default"><span class="glyphicon glyphicon-stop"></span></button>
-			  <!-- <button id="musicSkip" type="button" class="btn btn-default"><span class="glyphicon glyphicon-step-forward"></span></button> -->
-				<div id="nowPlaying" class="btn btn-default">Now playing: <span id="currentStation"></span></div>
+				<div id="nowPlaying" class="now-playing btn btn-default">Now playing: <span id="currentStation"></span></div>
 			</div>
 		</div>
 	</nav>
-
 	<!-- JavaScript -->
 	<script type="text/javascript" src="assets/javascript/firewire.js"></script>
+	<script type="text/javascript" src="assets/javascript/netradio.js"></script>
 	<script type="text/javascript" src="assets/javascript/MusixMatchAPI.js"></script>
 	<script type="text/javascript" src="assets/javascript/BitAPI.js"></script>
+	<script type="text/javascript" src="assets/javascript/GiphyApi.js"></script>
 	<script type="text/javascript" src="assets/javascript/DiscogsAPIUtil.js"></script>
 	<script type="text/javascript" src="assets/javascript/java.js"></script>
 </body>

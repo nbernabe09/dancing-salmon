@@ -155,6 +155,14 @@ function DiscogsAPIUtil() {
       return this.searchAPI({"query": term})
    }
 
+   this.artistFindAPI = function(artist) {
+      return this.searchAPI({"query": artist, "type": "artist"});
+   }
+
+   this.singlesFindAPI = function(artist) {
+      return this.searchAPI({"query": artist, "format": "single"});
+   }
+
    this.artistAPI = function(id) {
       return this.request('/artists/', id);
    }
@@ -169,6 +177,16 @@ function DiscogsAPIUtil() {
 
    this.labelAPI = function(id) {
       return this.request('/label/', id);
+   }
+
+   this.releaseToArtist = function(id) {
+      let artPromise = new Promise((resolve, reject) => {
+         var resp = this.releaseAPI(id);
+         resp.then((val) => {
+            resolve(val.artists[0]);
+         });
+      });
+      return artPromise;
    }
 
    this.request = function(endpoint, querystring) {

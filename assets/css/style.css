@@ -32,6 +32,9 @@
   }
 */
 
+body, html {
+  height: 100%;
+}
 
 body {
   font-family: "Lato", sans-serif;
@@ -40,344 +43,318 @@ body {
   /*min-width: 965px;*/
 }
 
-.main {
+.single-img {
+  display: block;
+  margin: 0 auto;
+  width: 25vh;
+  height: 25vh;
+}
+
+/*Bottom Navbar*/
+.bottomNav {
+  background: linear-gradient(#655244, #ff6f00);
+  border-color: #655244;
+  vertical-align: middle;
+  left: 0;
+  width: 100%;
+  padding-top: 5px;
   transition: .5s;
-  padding: 0 20px 50px 20px;
+}
+
+.bottomNav .now-playing {
+  background-color: #ef6800;
+  color: #202020;
+  cursor: default;
+}
+
+/*Search Bar*/
+.searchBox {
+  background-color: #202020;
+  border-color: #655244;
+  color: #fff;
+}
+
+.music-search {
+  max-width: 500px;
+}
+
+.search {
+  background-color: #ef6800;
+  color: #202020;
+  border-color: #655244;
+  top: 0;
+}
+
+.search:hover {
+  cursor: pointer;
+  background-color: #ef9d00;
+}
+
+.search-results {
+  position: absolute;
+  padding: 2px 10px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #141414;
+  visibility: hidden;
+  border: 2px solid #2a3e3d;
+  font-weight: bold;
+  word-wrap: break-word;
+  color: #fff;
+  z-index: 8;
+}
+
+/*Artist Page*/
+.artist-page {
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  /*background-color: #2a3e3d;*/
+  overflow-x: hidden;
+  overflow-y: auto;
+  opacity: 0.95;
+  background: rgba(0,0,0,0.97);
+  color: #fff;
+  height: 95vh;
+  padding-bottom: 5vh;
+}
+
+.artist-page p {
+  padding: 1px 4px 1px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+
+.artist-page a:hover {
+  color: #00dbcb;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.artist-page .close-artist {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.artist-image {
+  display:block;
+  margin: 1vh auto;
+}
+
+.left-tab {
+  cursor: pointer;
+  list-style: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 40px;
+  transition: .5s;
+  padding: 8px 5px;
+  border: 3px solid #fff;
+  border-left: none;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 0 0 7px rgba(0, 0, 0, .6);
+  background: #a7383e;
+}
+
+.right-tab {
+  cursor: pointer;
+  list-style: none;
+  position: fixed;
+  z-index: 9;
+  right: 0;
+  top: 40px;
+  transition: .5s;
+  padding: 8px 5px;
+  border: 3px solid #fff;
+  border-right: none;
+  border-radius: 10px 0 0 10px;
+  box-shadow: 0 0 7px rgba(0, 0, 0, .6);
+  background: #aa8339;
+}
+
+.left-burger, .right-burger {
+  color: #202020;
 }
 
 /*Top Navbar*/
-  #navbar {
-    margin-left: 0;
-    transition: .5s;
-    color: #202020;
-    background: linear-gradient(#ff6f00, #655244);
-    padding: 10px 0 10px 0;
-    border-bottom: 2px solid #655244;
-    z-index: 7;
-  }
-
-  #projectName {
-    font-size: 25px;
-    color: #202020;
-  }
-
-  .form-group {
-    width: 100%;
-    position: relative;
-    margin-bottom: 0;
-  }
-
-  .btn {
-    background-color: #a7383e;
-    border-color: #655244;
-    color: #202020;
-  }
-
-  .btn-default:hover {
-    background-color: #ef9d00;
-    border-color: #655944;
-  }
-
-  .btn-default:focus {
-    background-color: #ffa700;
-  }
-
-/*Search Bar*/
-  #searchBox {
-    background-color: #202020;
-    border-color: #655244;
-    color: #fff;
-  }
-
-  .search-image {
-    width:100%;
-  }
-
-  .search-image-holder {
-    min-height:10vh;
-  }
-
-  .search-line {
-    padding:.1vh 2%;
-    /*transition: .3s;*/
-  }
-
-  .search-line:hover {
-    background-color: #2a3e3d;
-    cursor: pointer;
-  }
-
-  #music-search {
-    max-width: 500px;
-  }
-
-  .dropdown-menu {
-    background-color: #ff6f00;
-  }
-
-  #search {
-    background-color: #ef6800;
-    color: #202020;
-    border-color: #655244;
-    top: 0;
-  }
-
-  #search:hover {
-    cursor: pointer;
-    background-color: #ef9d00;
-  }
-
-  #search-results {
-    /*position: absolute;*/
-    padding: 2px 10px;
-    /*left: 0;*/
-    width: 100%;
-    min-height: 20vh;
-    max-height: 80vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    /*transition: .3s;*/
-    background-color: #141414;
-    visibility: hidden;
-    border: 2px solid #2a3e3d;
-    font-weight: bold;
-    word-wrap: break-word;
-    color: #fff;
-    z-index: 8;
-  }
+.nav {
+  margin-left: 0;
+  color: #202020;
+  background: linear-gradient(#ff6f00, #655244);
+  padding: 10px 0 10px 0;
+  border-bottom: 2px solid #655244;
+  z-index: 7;
+}
 
 /*Side Nav*/
-  #leftNav {
-    height: 100%;
-    width: 0;
-    /*min-width: 0;*/
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background: linear-gradient(to right, #634244, #a7383e);
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding: 50px 0;
-  }
+.left-nav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, #634244, #a7383e);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding: 50px 0;
+}
 
-  #rightNav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 9;
-    top: 0;
-    right: 0;
-    background: linear-gradient(to right, #aa8339, #655944);
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 50px;
-  }
+.right-nav {
+  height: 100vh;
+  width: 0;
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  right: 0;
+  background: linear-gradient(to right, #aa8339, #655944);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 50px;
+}
 
-  #leftNav p, #rightNav p, #rightNav h5, #leftNav h5{
-    padding: 1vh 2% 1vh 8%;
-    text-decoration: none;
-    font-size: 1.7vw;
-    color: #202020;
-    display: block;
-    transition: 0.3s;
-  }
+.left-nav p, .right-nav p, .right-nav h5, .left-nav h5{
+  padding: 1vh 2% 1vh 8%;
+  text-decoration: none;
+  font-size: 1.7vw;
+  color: #202020;
+  display: block;
+  transition: 0.3s;
+}
 
-  #leftNav p:hover, #rightNav p:hover {
-    color: #ef9d00;
-    cursor: pointer;
-  }
-
-  #leftBurger, #rightBurger {
-    color: #202020;
-  }
-
-  #leftTab {
-    cursor: pointer;
-    list-style: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 75px;
-    transition: .5s;
-    padding: 8px 5px;
-    border: 3px solid #fff;
-    border-left: none;
-    border-radius: 0 10px 10px 0;
-    box-shadow: 0 0 7px rgba(0, 0, 0, .6);
-    background: #a7383e;
-  }
-
-  #rightTab {
-    cursor: pointer;
-    list-style: none;
-    position: fixed;
-    z-index: 9;
-    right: 0;
-    top: 75px;
-    transition: .5s;
-    padding: 8px 5px;
-    border: 3px solid #fff;
-    border-right: none;
-    border-radius: 10px 0 0 10px;
-    box-shadow: 0 0 7px rgba(0, 0, 0, .6);
-    background: #aa8339;
-  }
-
-  .leftNavList, .rightNavList {
-    /*width:200px;*/
-  }
-
-/*Artist Page*/
-  #artistPage {
-    display: none;
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    /*background-color: #2a3e3d;*/
-    overflow-x: hidden;
-    overflow-y: auto;
-    opacity: 0.95;
-    background: rgba(0,0,0,0.97);
-    color: #fff;
-    height: 95vh;
-    padding-bottom: 5vh;
-  }
-
-  #artistPage p {
-    padding: 1px 4px 1px 16px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #fff;
-    display: block;
-    transition: 0.3s;
-  }
-
-  #artistPage a:hover {
-    color: #00dbcb;
-    cursor: pointer;
-    text-decoration: none;
-  }
-
-  #artistPage #closeArtist {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
-
-  #artistBurger {
-    font-size: 30px;
-    cursor: pointer;
-  }
-
-  #artist-image {
-    display:block;
-    margin: 1vh auto;
-  }
-
-  .artist-sub {
-    font-size: 1.5em;
-    margin: 0 2%;
-    -webkit-box-shadow: 0px 0px 15px #fff;
-    -moz-box-shadow: 0px 0px 15px #fff;
-    box-shadow: 0px 0px 15px #fff;
-  }
+.left-nav p:hover, .right-nav p:hover {
+  color: #ef9d00;
+  cursor: pointer;
+}
 
 /*Jumbotron*/
-  #mainScreen {
-    background-color: #141414;
-    text-align: center;
-  }
+.main-screen {
+  background-color: #141414;
+  text-align: center;
+}
 
-  /*.videoWrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 35px;
-    height: 0;
-    overflow: hidden;
-  }*/
+.main {
+  transition: .5s;
+  margin-top: 25px;
+  padding: 0 20px 50px 20px;
+}
 
-  .videoWrapper iframe {
-    margin: auto;
-    /*position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;*/
-  }
+.form-group {
+  width: 100%;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.btn {
+  background-color: #a7383e;
+  border-color: #655244;
+  color: #202020;
+}
+
+.btn-default:hover {
+  background-color: #ef9d00;
+  border-color: #655944;
+}
+
+.btn-default:focus {
+  background-color: #ffa700;
+}
+
+.left-nav-list, .right-nav-list {
+  /*width:200px;*/
+}
+
+.artist-sub {
+  font-size: 1.5em;
+  margin: 0 2%;
+  -webkit-box-shadow: 0px 0px 15px #fff;
+  -moz-box-shadow: 0px 0px 15px #fff;
+  box-shadow: 0px 0px 15px #fff;
+}
+
+.search-image {
+  width:100%;
+}
+
+/* TO DO, MAKE IMAGE MIN-HEIGHT 10VH */
+.search-image-holder {
+  min-height:10vh;
+}
+
+.search-line {
+  padding:.1vh 2%;
+  /*transition: .3s;*/
+}
+
+.search-line:hover {
+  background-color: #2a3e3d;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  background-color: #ff6f00;
+}
+
+
+.vid-frame {
+  margin: auto;
+}
 
 /*Panel Elements*/
-  .panel-default>.panel-heading {
-    color: #fff;
-    border-color: #655244;
-  }
+.panel-default>.panel-heading {
+  color: #fff;
+  border-color: #655244;
+}
 
-  .panel-default>#most-recent-heading {
-    background: linear-gradient(#aa6a39, #655244);
-  }
+.panel-default > .recent {
+  background: linear-gradient(#aa6a39, #655244);
+}
 
-  .panel-default>#top-songs-heading {
-    background: linear-gradient(#a7383e, #655244);
-  }
+.panel-default > .top {
+  background: linear-gradient(#a7383e, #655244);
+}
 
-  .panel-default>#nearby-concerts-heading {
-    background: linear-gradient(#aa8339, #655244);
-  }
-
-  .panel-default, .panel-default .thumbnail {
-    border: 0;
-    background-color: #141414;
-    transition: .3s;
-  }
+.panel-default, .panel-default .thumbnail {
+  border: 0;
+  background-color: #141414;
+  transition: .3s;
+}
 
 /*Thumbnail Elements*/
-  .caption h3 {
-    text-align: center;
-    color: #fff;
-  }
+.caption h3 {
+  text-align: center;
+  color: #fff;
+}
 
-  .caption p {
-    text-align: center;
-    color: #655944;
-  }
+.caption p {
+  text-align: center;
+  color: #655944;
+}
 
-  .thumbnail:hover {
-    background-color: #2a3e3d;
-    text-decoration: none;
-    cursor: pointer;
-  }
+.thumbnail:hover {
+  background-color: #2a3e3d;
+  text-decoration: none;
+  cursor: pointer;
+}
 
-  .thumbnail:focus {
-    text-decoration: none;
-  }
-
-  .thumbnail img {
-    width: 200px;
-  }
+.thumbnail:focus {
+  text-decoration: none;
+}
 
 /*Concert Info Page*/
-  .concert-info {
-    margin-bottom: 10px;
-  }
-
-/*Bottom Navbar*/
-  #bottomNav {
-    background: linear-gradient(#655244, #ff6f00);
-    border-color: #655244;
-    vertical-align: middle;
-    left: 0;
-    width: 100%;
-    padding-top: 5px;
-    transition: .5s;
-  }
-
-  #bottomNav #nowPlaying {
-    background-color: #ef6800;
-    color: #202020;
-    cursor: default;
-  }
+.concert-info {
+  margin-bottom: 10px;
+}

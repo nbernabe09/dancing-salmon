@@ -1,10 +1,11 @@
+// dict = {"id": id};
 var config = {
-    apiKey: "AIzaSyBjawp0OAUZrD_AiLzy4DnegoXCam6g2Xc",
-    authDomain: "song-sling.firebaseapp.com",
-    databaseURL: "https://song-sling.firebaseio.com",
-    projectId: "song-sling",
-    storageBucket: "song-sling.appspot.com",
-    messagingSenderId: "848666248371"
+  apiKey: "AIzaSyDUt5rSSC7kQ6tDKn6MAd6ifSsk_sk5PdA",
+  authDomain: "song-search-cfdaf.firebaseapp.com",
+  databaseURL: "https://song-search-cfdaf.firebaseio.com",
+  projectId: "song-search-cfdaf",
+  storageBucket: "song-search-cfdaf.appspot.com",
+  messagingSenderId: "36762759023"
 };
 
 // $.getScript("https://www.gstatic.com/firebasejs/4.2.0/firebase.js")
@@ -26,31 +27,39 @@ function updateRecent(obj) {
    updateFB(dbRef, obj);
 }
 
-function lastSearch(phrase) {
+function lastSearch(id) {
    var time = Date.now();
    var update = {};
-   update[time] = phrase;
+   update[time] = id;
    updateRecent(update);
 }
 
-function incrTerm(term) {
-  var dbRef = database.ref("terms");
+function removeSpecial(string) {
+  var spec = [".", "#", "$", "/", "[", "]"];
+  spec.forEach((elem) => { string = string.replace(elem, ""); });
+  return string;
+}
+
+function incrSong(song, id) {
+  var dbRef = database.ref("songs");
+  song = removeSpecial(song);
   dbRef.transaction(function(dict) {
-     if(dict) {
-       if(term in dict) { dict[term]++; }
-       else { dict[term] = 0; }
-     } else {
-       dict = {};
-       dict[term] = 0;
-     }
-       return dict;
-   });
+    if(!dict) dict = {};
+    if(song in dict) {
+      dict[song]["count"]++;
+    } else {
+      dict[song] = {};
+      dict[song]["id"] = id;
+      dict[song]["count"] = 1;
+    }
+    return dict; 
+  });
 }
 
 function topTerms(num, proc) {
    num = num || 10;
    firebase.database()
-           .ref('terms')
+           .ref("songs")
            .orderByValue()
            .limitToLast(num)
            .once('value')
@@ -71,14 +80,73 @@ function recentSearches(num, proc) {
            });
 }
 
-var terms = database.ref("terms");
-terms.on("value", function(snapshot) {
+var songs = database.ref("songs");
+songs.orderByChild("count").limitToLast(4).on("value", function(snapshot) {
    val = snapshot.val();
-   // Add code to update page
+   $("#topSingles").empty();
+   for(var prop in val) {
+      discogsCall.releaseAPI(val[prop].id)
+                 .then((val) => { 
+                    var passer = {}; 
+                    passer["id"]    = val.id;
+                    passer["title"] = val.title;
+                    if(!val.thumb) {
+                      giphyApi.giphyRequest(val.title)
+                              .then((resp) => {
+                                var respObj  = giphyApi.respToGifObj(resp.data[0]);
+                                var giphyGif = giphyApi.newGiphyGif(respObj);
+                                passer["thumb"] = giphyGif.still;
+                              });
+                    } else {
+                      passer["thumb"] = val.thumb;
+                    }
+                    return passer;
+                  })
+                 .then((passer) => {
+                    discogsCall.releaseToArtist(passer.id)
+                               .then((val) => {
+                                 passer["artistName"] = val.name;
+                                 passer["artistId"]   = val.id;
+                                 addTop(passer);
+                               });
+                 });
+   }
 });
 
 var recent = database.ref("recent");
-recent.on("value", function(snapshot) {
+recent.orderByKey().limitToLast(4).on("value", function(snapshot) {
    val = snapshot.val();
-   // Add code to update page
+   $("#recSingles").empty();
+   for(var prop in val) {
+      discogsCall.releaseAPI(val[prop])
+                 .then((val) => { 
+                    var passer = {}; 
+                    passer["id"]    = val.id;
+                    passer["title"] = val.title;
+                    if(val.thumb) {
+                      passer["thumb"] = val.thumb;
+                    }
+                    return passer;
+                  })
+                 .then((passer) => {
+                    discogsCall.releaseToArtist(passer.id)
+                               .then((val) => {
+                                  if(passer.thumb === undefined) {
+                                    giphyApi.giphyRequest(val.name)
+                                            .then((resp) => {
+                                              var respObj  = giphyApi.respToGifObj(resp.data[0]);
+                                              var giphyGif = giphyApi.newGiphyGif(respObj);
+                                              passer["thumb"] = giphyGif.still;
+                                              passer["artistName"] = val.name;
+                                              passer["artistId"]   = val.id;
+                                              addRecent(passer);
+                                            });
+                                  } else {
+                                    passer["artistName"] = val.name;
+                                    passer["artistId"]   = val.id;
+                                    addRecent(passer);
+                                  }
+                               });
+                 });
+   }
 });
