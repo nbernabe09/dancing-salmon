@@ -1,55 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- FavIcon -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
-	<title>Project 1</title>
-	<!-- jQuery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!-- Lodash -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
-  <!-- Bootstrap CDN -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <!-- Moment.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
-  <!-- CSS -->
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  <!-- Firebase Reference -->
-  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<title>Project 1</title>
 </head>
 <body>
-
-  <div id="navbar" class="nav container-fluid">
-  	<div class="col-xs-12">
-	    <form id="musicSearch" class="music-search" method="post">
-	      <div class="form-group">
-	      	<div class="input-group">
-		        <input type="text" class="form-control searchBox" id="searchBox" autocomplete="off" placeholder="Music Search...">
-	    			<span id="search" class="search input-group-addon glyphicon glyphicon-search search-btn"></span>
-	      	</div>
-		      <div id="searchResults" class="search-results"></div>
-	      </div>
-	    </form>
-  	</div>
-  </div>
-
-	<ul id="leftTab" class="left-tab">
-		<li><span class="left-burger">&#9776;</span></li>
-	</ul>
-
-	<div id="leftNav" class="left-nav">
-		<div class="leftnav-list">
-			<h5>Most Recent Search</h5>
+	<div id="navbar" class="nav container-fluid">
+		<div class="col-xs-12">
+			<form id="musicSearch" class="music-search" method="post">
+				<div class="form-group">
+					<div class="input-group">
+						<input type="text" class="form-control searchBox" id="searchBox" autocomplete="off" placeholder="Music Search...">
+						<span id="search" class="search input-group-addon glyphicon glyphicon-search search-btn"></span>
+					</div>
+					<div id="searchResults" class="search-results"></div>
+				</div>
+			</form>
 		</div>
 	</div>
 
-	<ul id="rightTab" class="right-tab">
-		<li><span class="right-burger">&#9776;</span></li>
-	</ul>
-
 	<div id="rightNav" class="right-nav">
+		<ul id="rightTab" class="right-tab">
+			<li><span class="right-burger">&#9776;</span></li>
+		</ul>
 		<div id="stationList" class="right-nav-list">
 			<audio id="radio" src=""></audio>
 			<h5><b>Music Player</b></h5>
@@ -64,54 +47,25 @@
 			<p id="aboutArtist"></p>
 			<div class="row">
 				<div class="artist-sub col-md-5">
-				  <h3>Top Songs</h3>
-				  <p id="topSongs"></p>
+					<h3>Top Songs</h3>
+					<p id="topSongs"></p>
 				</div>
 				<div class="artist-sub col-md-6">
-				  <h3>Upcoming Concerts</h3>
-				  <p id="upcomingConcerts"></p>
+					<h3>Upcoming Concerts</h3>
+					<p id="upcomingConcerts"></p>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div id="mainScreen" class="main-screen center-block">
-	</div>
+	<div id="mainScreen" class="main-screen center-block"></div>
 
-	<div class="main"><!-- Do not change this div -->
+	<div class="main">
 		<div class="panel panel-default clearfix">
 			<div class="panel-heading recent">
 				<h3 class="panel-title">Most Recent Songs</h3>
 			</div>
 			<div id="recSingles">
-				<div class="col-xs-6 col-md-3">
-			      <img class="single-img" src="assets/images/empty.jpg">
-			      <div class="caption">
-			      	<h3>Unknown Song</h3>
-			      	<p class="artist">Unknown Artist</p>
-			    	</div>
-			  </div>
-				<div class="col-xs-6 col-md-3">
-			      <img class="single-img" src="assets/images/empty.jpg">
-			      <div class="caption">
-			      	<h3>Unknown Song</h3>
-			      	<p class="artist">Unknown Artist</p>
-			    	</div>
-			  </div>
-				<div class="col-xs-6 col-md-3">
-			      <img class="single-img" src="assets/images/empty.jpg">
-			      <div class="caption">
-			      	<h3>Unknown Song</h3>
-			      	<p class="artist">Unknown Artist</p>
-			    	</div>
-			  </div>
-				<div class="col-xs-6 col-md-3">
-			      <img class="single-img" src="assets/images/empty.jpg">
-			      <div class="caption">
-			      	<h3>Unknown Song</h3>
-			      	<p class="artist">Unknown Artist</p>
-			    	</div>
-			  </div>
 			</div>
 		</div>
 
@@ -120,40 +74,12 @@
 				<h3 class="panel-title">Top Songs</h3>
 			</div>
 			<div id="topSingles">
-				<div class="col-xs-6 col-md-3">
-			      <img class="single-img" src="assets/images/empty.jpg">
-			      <div class="caption">
-			      	<h3>Unknown Song</h3>
-			      	<p class="artist">Unknown Artist</p>
-			    	</div>
-			  </div>
-				<div class="col-xs-6 col-md-3">
-			      <img class="single-img" src="assets/images/empty.jpg">
-			      <div class="caption">
-			      	<h3>Unknown Song</h3>
-			      	<p class="artist">Unknown Artist</p>
-			    	</div>
-			  </div>
-				<div class="col-xs-6 col-md-3">
-			      <img class="single-img" src="assets/images/empty.jpg">
-			      <div class="caption">
-			      	<h3>Unknown Song</h3>
-			      	<p class="artist">Unknown Artist</p>
-			    	</div>
-			  </div>
-				<div class="col-xs-6 col-md-3">
-			      <img class="single-img" src="assets/images/empty.jpg">
-			      <div class="caption">
-			      	<h3>Unknown Song</h3>
-			      	<p class="artist">Unknown Artist</p>
-			    	</div>
-			  </div>
 			</div>
 		</div>
 	</div>
-	<nav id="bottomNav" class="bottomNav navbar navbar-default navbar-fixed-bottom text-center">
-	  <div class="container-fluid">
-	    <div class="btn-group" role="group">
+	<nav id="bottomNav" class="bottom-nav navbar navbar-default navbar-fixed-bottom text-center">
+		<div class="container-fluid">
+		 <div class="btn-group" role="group">
 			  <button id="musicPlay" type="button" class="btn btn-default"><span id="playBtn" class="glyphicon glyphicon-play"></span></button>
 			  <button id="musicStop" type="button" class="btn btn-default"><span class="glyphicon glyphicon-stop"></span></button>
 				<div id="nowPlaying" class="now-playing btn btn-default">Now playing: <span id="currentStation"></span></div>
@@ -165,8 +91,7 @@
 	<script type="text/javascript" src="assets/javascript/netradio.js"></script>
 	<script type="text/javascript" src="assets/javascript/MusixMatchAPI.js"></script>
 	<script type="text/javascript" src="assets/javascript/BitAPI.js"></script>
-	<script type="text/javascript" src="assets/javascript/GiphyApi.js"></script>
 	<script type="text/javascript" src="assets/javascript/DiscogsAPIUtil.js"></script>
-	<script type="text/javascript" src="assets/javascript/java.js"></script>
+	<script type="text/javascript" src="assets/javascript/javascript.js"></script>
 </body>
 </html>
