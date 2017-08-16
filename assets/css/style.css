@@ -1,317 +1,154 @@
-/*CSS Notes
-  Primary {
-    black: #202020;
-    brown: #655244;
-    faded-orange: #aa6a39;
-    dark orange: #ef6800;
-    orange: #ff6f00;
+/*Body*/
+  body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
   }
 
-  Secondary 1 {
-    black: #202020;
-    light-brown: #655944;
-    faded-yellow: #aa8339;
-    gold: #ef9d00;
-    dark-yellow: #ffa700;
+  body::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
   }
 
-  Secondary 2 {
-    black: #202020;
-    purple: #634244;
-    faded-red: #a7383e;
-    red: #eb000c;
-    darkish-red: #fd000d;
+  body::-webkit-scrollbar-thumb {
+    background-color: #000000;
   }
 
-  Complement {
-    black: #141414;
-    blue-grey: #2a3e3d;
-    dark-aqua: #236863;
-    aqua: #009388;
-    light-aqua: #00dbcb;
-  }
-*/
+/*Navbar Top*/
+	.navbar-brand:hover, .searchBtn:hover {
+		cursor: pointer;
+	}
 
-body {
-  font-family: "Lato", sans-serif;
-  background-color: #202020;
-  color: #fff;
-  /*min-width: 965px;*/
-}
+	.station:hover {
+		cursor: pointer;
+	}
 
-.main {
-  transition: .5s;
-  padding: 0 20px;
-}
-
-/*Top Navbar*/
-  #navbar {
-    margin-left: 0;
-    transition: .5s;
-    color: #202020;
-    background: linear-gradient(#ff6f00, #655244);
-    padding: 10px 0 10px 0;
-    border-bottom: 2px solid #655244;
-    z-index: 20;
+  .now-playing {
+    padding: 0;
   }
 
-  #projectName {
-    font-size: 25px;
-    color: #202020;
-  }
-
-  .form-group {
-    width: 100%;
-    position: relative;
+  .station {
+    padding: 4px 24px;
     margin-bottom: 0;
   }
 
-  .btn {
-    background-color: #a7383e;
-    border-color: #655244;
-    color: #202020;
+/*Search Results*/
+  .search-results::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
   }
 
-  .btn-default:hover {
-    background-color: #ef9d00;
-    border-color: #655944;
+  .search-results::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
   }
 
-  .btn-default:focus {
-    background-color: #ffa700; 
+  .search-results::-webkit-scrollbar-thumb {
+    background-color: #000000;
   }
 
-/*Search Bar*/
-  #searchBox {
-    background-color: #202020;
-    border-color: #655244;
-    color: #fff;
+	.search-image {
+    width: 10vh;
   }
 
-  .search-image {
-    width:100%;
-  }
-
-  .tester {
-    background-color: black;
+  .search-image-holder {
+    min-height: 10vh;
   }
 
   .search-line {
-    padding:.1vh 2%;
-    /*transition: .3s;*/
+    padding: .1vh 2%;
   }
 
   .search-line:hover {
-    background-color: #2a3e3d;
+    background-color: lightgrey;
     cursor: pointer;
   }
 
-  #music-search {
-    width: 400px;
-  }
-
-  .dropdown-menu {
-    background-color: #ff6f00;
-  }
-
-  #search {
-    background-color: #ef6800;
-    color: #202020;
-    border-color: #655244;
-    top: 0;
-  }
-
-  #search:hover {
-    cursor: pointer;
-    background-color: #ef9d00;
-  }
-
-  #search-results {
+  .search-results {
     position: absolute;
     padding: 2px 10px;
     left: 0;
     width: 100%;
-    min-height: 200px;
-    /*transition: .3s;*/
-    background-color: #141414;
+    /*min-height: 20vh;*/
+    max-height: 40vh;
+    overflow-y: auto;
+    overflow-x: hidden;
     visibility: hidden;
-    border: 2px solid #2a3e3d;
     font-weight: bold;
     word-wrap: break-word;
-    color: #fff;
-    z-index: 100;
+    z-index: 8;
   }
 
-/*Side Nav*/
-  #leftNav {
-    height: 100%;
-    width: 0;
-    /*min-width: 0;*/
-    position: fixed;
-    z-index: 1;
-    top: 0;
+  .about-artist {
+    max-height: 10vh;
+    overflow: hidden;
+  }
+
+/*Video Player*/
+	@media (min-width: 992px) {
+		.container {
+		  max-width: 720px;
+		}
+	}
+
+	.video-wrapper {
+		position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+	}
+
+	.video-wrapper iframe {
+		position: absolute;
+    top:0;
     left: 0;
-    background: linear-gradient(to right, #634244, #a7383e);
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 50px;
-  }
-
-  #rightNav {
+    width: 100%;
     height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    background: linear-gradient(to right, #aa8339, #655944);
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 50px;
-  }
-
-  #leftNav a, #rightNav a, #rightNav h5{
-    padding: 1vh 2% 1vh 8%;
-    text-decoration: none;
-    font-size: 1.7vw;
-    color: #202020;
-    display: block;
-    transition: 0.3s;
-  }
-
-  #leftNav a:hover, #rightNav a:hover {
-    color: #ef9d00;
-  }
-
-  #leftBurger, #rightBurger {
-    color: #202020;
-  }
-
-  #leftTab {
-    cursor: pointer;
-    list-style: none; 
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 75px;
-    transition: .5s;
-    padding: 8px 5px;
-    border: 3px solid #fff;
-    border-left: none;
-    border-radius: 0 10px 10px 0;
-    box-shadow: 0 0 7px rgba(0, 0, 0, .6);
-    background: #a7383e;
-  }
-
-  #rightTab {
-    cursor: pointer;
-    list-style: none; 
-    position: fixed;
-    z-index: 1;
-    right: 0;
-    top: 75px;
-    transition: .5s;
-    padding: 8px 5px;
-    border: 3px solid #fff;
-    border-right: none;
-    border-radius: 10px 0 0 10px;
-    box-shadow: 0 0 7px rgba(0, 0, 0, .6);
-    background: #aa8339;
-  }
+	}
 
 /*Artist Page*/
-  #artistPage {
-      height: 100%;
-      width: 0;
-      position: fixed;
-      z-index: 10;
-      top: 0;
-      left: 0;
-      background-color: #2a3e3d;
-      overflow-x: hidden;
-      transition: 0.5s;
-      padding-top: 60px;
-      text-align:center;
-      opacity: 0.95;
+  .artist-page::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
   }
 
-  #artistPage a {
-      padding: 8px 8px 8px 32px;
-      text-decoration: none;
-      font-size: 25px;
-      color: #fff;
-      display: block;
-      transition: 0.3s;
-
+  .artist-page::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
   }
 
-  #artistPage a:hover {
-      color: #00dbcb;
+  .artist-page::-webkit-scrollbar-thumb {
+    background-color: #000000;
   }
 
-  #artistPage #closeArtist {
-      position: absolute;
-      top: 0;
-      right: 25px;
-      font-size: 36px;
-      margin-left: 50px;
+  .artist-container {
+    width: 20rem;
   }
 
-  #artistBurger {
-    font-size: 30px;
+	.artist-page {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: .5s;
+    z-index: 2;
+  }
+
+  .close-artist:hover {
     cursor: pointer;
-  }
-
-/*Jumbotron*/
-  .jumbotron {
-    background-color: #141414;
-    text-align: center;
-  }
-
-/*Panel Elements*/
-  .panel-default>.panel-heading {
-    color: #fff;
-    border-color: #655244;
-  }
-
-  .panel-default>#most-recent-heading {
-    background: linear-gradient(#aa6a39, #655244);
-  }
-
-  .panel-default>#top-songs-heading {
-    background: linear-gradient(#a7383e, #655244);
-  }
-
-  .panel-default>#new-releases-heading {
-    background: linear-gradient(#aa8339, #655244);
-  }
-
-  .panel-default, .panel-default .thumbnail {
-    border: 0;
-    background-color: #141414;
-    transition: .3s;
-  }
-
-/*Thumbnail Elements*/
-  .caption h3 {
-    text-align: center;
-    color: #fff;
-  }
-
-  .caption p {
-    text-align: center;
-    color: #655944;
-  }
-
-  .thumbnail:hover {
-    background-color: #2a3e3d;
     text-decoration: none;
   }
 
-  .thumbnail:focus {
-    text-decoration: none;
+  .close-artist {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
   }
 
-  .thumbnail img {
-    width: 200px;
+	.concert-info {
+    margin-bottom: 10px;
   }
