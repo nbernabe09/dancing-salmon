@@ -1,50 +1,28 @@
 function DiscogsAPIUtil() {
-   function DiscogsArtist(dartReq) {
-      this.bio        = dartReq.bio;
-      this.realname   = dartReq.realname;
-      this.artistname = dartReq.artistname;
-      this.uri        = dartReq.uri;
-      this.urls       = dartReq.urls;
-      this.images     = dartReq.images;
+
+   function replaceAccents(s)
+   {
+       var s;
+
+       var diacritics =[
+           /[\300-\306]/g, /[\340-\346]/g,  // A, a
+           /[\310-\313]/g, /[\350-\353]/g,  // E, e
+           /[\314-\317]/g, /[\354-\357]/g,  // I, i
+           /[\322-\330]/g, /[\362-\370]/g,  // O, o
+           /[\331-\334]/g, /[\371-\374]/g,  // U, u
+           /[\321]/g, /[\361]/g, // N, n
+           /[\307]/g, /[\347]/g, // C, c
+       ];
+
+       var chars = ['A','a','E','e','I','i','O','o','U','u','N','n','C','c'];
+
+       for (var i = 0; i < diacritics.length; i++)
+       {
+           s = s.replace(diacritics[i],chars[i]);
+       }
+
+       return s;
    }
-
-   // function ArtistRequestInfo(artReq) {
-   //    this.id    = artReq.id;
-   //    this.thumb = artReq.thumb;
-   //    this.title = artReq.title;
-   //    this.type  = artReq.type;
-   // }
-
-   // function MasterRequestInfo(mastReq) {
-   //    this.id      = mastReq.id;
-   //    this.thumb   = mastReq.thumb;
-   //    this.title   = mastReq.title;
-   //    this.type    = mastReq.type;
-   //    this.country = mastReq.country;
-   //    this.genre   = mastReq.genre;
-   //    this.style   = mastReq.style;
-   //    this.label   = mastReq.label;
-   //    this.year    = mastReq.year;
-   // }
-
-   // function ReleaseRequestInfo(relReq) {
-   //    this.id      = relReq.id;
-   //    this.thumb   = relReq.thumb;
-   //    this.title   = relReq.title;
-   //    this.type    = relReq.type;
-   //    this.country = relReq.country;
-   //    this.genre   = relReq.genre;
-   //    this.style   = relReq.style;
-   //    this.label   = relReq.label;
-   //    this.year    = relReq.year;
-   // }
-
-   // function LabelRequestInfo(labelReq) {
-   //    this.id    = labelReq.id;
-   //    this.thumb = labelReq.thumb;
-   //    this.title = labelReq.title;
-   //    this.type  = labelReq.type;
-   // }
 
    var validQueryOpts  = {
       "query": { "desc": "Your search query." },
@@ -151,27 +129,52 @@ function DiscogsAPIUtil() {
       return this.request(endpoint, optsStr, this.postToList);
    };
 
+   this.queryAPI = function(term) {
+      return this.searchAPI({"query": term})
+   }
+
+   this.artistFindAPI = function(artist) {
+      return this.searchAPI({"query": artist, "type": "artist"});
+   }
+
+   this.singlesFindAPI = function(artist) {
+      return this.searchAPI({"query": artist, "format": "single"});
+   }
+
    this.artistAPI = function(id) {
       return this.request('/artists/', id);
    }
 
    this.masterAPI = function(id) {
-      return this.request('masters', id);
+      return this.request('/masters/', id);
    };
 
    this.releaseAPI = function(id) {
-      return this.request('/release/', id);
+      return this.request('/releases/', id);
    }
 
    this.labelAPI = function(id) {
       return this.request('/label/', id);
    }
 
+   this.releaseToArtist = function(id) {
+      let artPromise = new Promise((resolve, reject) => {
+         var resp = this.releaseAPI(id);
+         resp.then((val) => {
+            resolve(val.artists[0]);
+         });
+      });
+      return artPromise;
+   }
+
    this.request = function(endpoint, querystring) {
       var baseurl = 'https://api.discogs.com';
+      var totalUrl = baseurl + endpoint + querystring;
+      totalUrl = spaceToPlus(totalUrl);
+      totalUrl = replaceAccents(totalUrl);
       let discogPromise = new Promise((resolve,reject) => {
         $.ajax({
-           url: baseurl + endpoint + querystring,
+           url: totalUrl,
            method: "GET"
         }).done(function(response) {
            resolve(response);
