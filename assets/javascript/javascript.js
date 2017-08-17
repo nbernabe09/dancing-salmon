@@ -401,6 +401,7 @@ $(document).on("click", ".artist", function() {
 $(document).on("click", ".song", function() {
    var id = $(this).attr("data-id");
    setSingle(id);
+   window.scrollTo(0, 0);
 });
 
 $(document).keyup(function(e) {
