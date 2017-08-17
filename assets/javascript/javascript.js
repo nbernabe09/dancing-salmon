@@ -222,7 +222,7 @@ function addRecent(recObj) {
 }
 
 function createSingleTag(recObj) {
-  var tmpDiv = $("<div>").addClass("col-xs-6 col-md-3 singles");
+  var tmpDiv = $("<div>").addClass("col text-center singles");
   var tmpImg = $("<img>").attr("src", picOrEmpty(recObj.thumb))
                          .addClass("song")
                          .attr("data-id", recObj.id);
