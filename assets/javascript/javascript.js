@@ -355,7 +355,7 @@ $(".station").on("click", function() {
 // Buttons
 $("#artistBtn").on("click", openArtNav);
 
-$("#closeArtist").on("click", closeArtNav);
+$("#closeArtistBottom").on("click", closeArtNav);
 
 $("#musicSearch").submit(() => {
   event.preventDefault();
