@@ -13,7 +13,7 @@ function NetRadio() {
       "J-Rock": "http://cabhs30.sonixcast.com:9508/;",
       "K-Pop": "http://184.95.62.170:9026/;",
       "Oldies": "http://192.95.18.39:5336/stream/;",
-      "RNB/Soul": "http://soulradio02.live-streams.nl",
+      "R&B/Soul": "http://soulradio02.live-streams.nl",
       "Slow Jams": "http://ritetimeradio.filehostia.com:8582/;"}
 
    this.stations = () => { return Object.keys(stationList); };
