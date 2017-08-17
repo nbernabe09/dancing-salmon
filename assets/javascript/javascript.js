@@ -16,11 +16,13 @@ $(document).ready(function() {
 // Functions
 function openArtNav() {
   $("#artistPage").css("width", "20rem");
+  $("#closeArtistFade").fadeIn(400);
   artistIsOpen = true;
 }
 
 function closeArtNav() {
   $("#artistPage").css("width", "0");
+  $("#closeArtistFade").fadeOut(400);
   artistIsOpen = false;
 }
 
@@ -356,6 +358,8 @@ $(".station").on("click", function() {
 $("#artistBtn").on("click", openArtNav);
 
 $("#closeArtistBottom").on("click", closeArtNav);
+
+$("#closeArtistFade").on("click", closeArtNav);
 
 $("#musicSearch").submit(() => {
   event.preventDefault();

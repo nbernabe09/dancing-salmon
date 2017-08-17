@@ -137,7 +137,7 @@
     overflow-x: hidden;
     overflow-y: auto;
     transition: .5s;
-    z-index: 2;
+    z-index: 3;
   }
 
   .close-artist:hover {
@@ -151,6 +151,18 @@
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
+  }
+
+  .close-artist-fade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    background: black;
+    opacity: 0.8;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
   }
 
 	.concert-info {
