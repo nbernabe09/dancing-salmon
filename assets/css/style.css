@@ -14,7 +14,11 @@
   }
 
 /*Navbar Top*/
-	.navbar-brand:hover, .searchBtn:hover {
+	.navbar-toggler-icon:hover {
+    cursor: pointer;
+  }
+
+  .navbar-brand:hover, .searchBtn:hover {
 		cursor: pointer;
 	}
 
@@ -151,4 +155,13 @@
 
 	.concert-info {
     margin-bottom: 10px;
+  }
+
+/*Main Cards*/
+  .song:hover {
+    cursor: pointer;
+  }
+
+  .artist:hover {
+    cursor: pointer;
   }
