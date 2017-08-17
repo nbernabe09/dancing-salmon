@@ -277,7 +277,7 @@ $("#closeArtist").on("click", closeArtNav);
 
 $("#musicPlay").on("click", () => {
   if ($("#radio").attr("src") === "") {
-    alert("Use the right tab to load a radio station!");
+    // console.log("Use the right tab to load a radio station!");
   } else {
     if (playing) {
       $("#radio")[0].pause();
@@ -297,6 +297,8 @@ $("#musicStop").on("click", () => {
   $("#currentStation").text("");
   $("#playBtn").attr("class", "ion-play");
   $("#musicPlay").attr("class", "btn btn-secondary");
+  $("#musicPlay").attr("data-toggle", "tooltip");
+  $("#musicPlay").attr("title", "Please load a radio station!");
   $("#radio")[0].pause();
   playing = false;
 });
@@ -352,6 +354,8 @@ $(".station").on("click", function() {
   $("#radio")[0].play();
   $("#playBtn").attr("class", "ion-pause");
   $("#musicPlay").attr("class", "btn btn-info");
+  $("#musicPlay").removeAttr("data-toggle");
+  $("#musicPlay").removeAttr("title");
   playing = true;
 });
 
