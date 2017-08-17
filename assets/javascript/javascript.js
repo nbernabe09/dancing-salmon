@@ -396,6 +396,7 @@ $(document).on("click", ".artist", function() {
     }
    }
    getArtist(id, proc);
+   $("#artistPage").animate({ scrollTop: 0 }, 1);
 });
 
 $(document).on("click", ".song", function() {
