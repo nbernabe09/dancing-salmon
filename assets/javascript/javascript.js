@@ -211,6 +211,7 @@ function openVideoPlayer() {
 
 function closeVideoPlayer() {
    $("#videoPlayer").slideUp(250);
+   $("#mainScreen").empty();
 }
 
 function addTop(recObj) {
@@ -370,8 +371,7 @@ $(document).on('click', () => {
 });
 
 $(document).on("click", "#close-video", function() {
-  $("#videoPlayer").slideUp();
-  $("#mainScreen").empty();
+  closeVideoPlayer()
 });
 
 $(document).on("click", ".artist", function() {
@@ -400,5 +400,8 @@ $(document).on("click", ".song", function() {
 });
 
 $(document).keyup(function(e) {
-  if (e.keyCode === 27) closeArtNav(); closeVideoPlayer();  // esc
+  if (e.keyCode === 27) {
+    closeArtNav();
+    closeVideoPlayer();
+  }  // esc
 });
