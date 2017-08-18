@@ -234,7 +234,7 @@ function convertDiscogsBBCode(text){
     })
 
     for (var i = objArr.length-1; i >= 0; i--){
-      var newTag = '<a href="https://www.discogs.com/';
+      var newTag = '<a target="_blank" href="https://www.discogs.com/';
       newTag += (objArr[i].type == 'master') ? 'master/' +objArr[i].id + '">' : 'artist/'+objArr[i].id + '">';
       newTag += objArr[i].name + '</a>';
       text = text.replace(objArr[i].string,newTag);
