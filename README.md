@@ -17,4 +17,4 @@ Check it out [here].
 [Adam Husain]: <https://github.com/medaman>
 [Nathan Bernabe]: <https://github.com/nbernabe09>
 [Kevin Chao]: <https://github.com/kevinchao7>
-[Alessandro Maclaine]: <github.com/almaclaine>
+[Alessandro Maclaine]: <https://github.com/almaclaine>
