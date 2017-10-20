@@ -6,10 +6,10 @@ Check it out [here].
 
 ###Team Members
 
-[Adam Husain]
-[Nathan Bernabe]
-[Kevin Chao]
-[Alessandro Maclaine]
+* [Adam Husain]
+* [Nathan Bernabe]
+* [Kevin Chao]
+* [Alessandro Maclaine]
 
 
 [here]: <https://medaman.github.io/dancing-salmon/>
