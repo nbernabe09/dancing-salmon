@@ -6,9 +6,14 @@ Dancing Salmon provides the ability to search for music videos using the Youtube
 Dancing Salmon includes a built in search tool which allows users to search for music or artists. Once they find what they are looking for, either they can play music videos of the songs or else get information about the artists and some of their upcoming concerts.
 There is also an Internet Radio tool where you can play music from different genres
 
+# Application Link
+
 Check it out [here].
 
-## Team Members
+# Presentation Link
+[Presentation]
+
+# Team Members
 
 * [Adam Husain]
 * [Nathan Bernabe]
@@ -42,6 +47,7 @@ Whats Wrong With Me App uses a number of open source APIs to access information 
 * Offline storage capabilities
 
    [here]: <https://medaman.github.io/dancing-salmon/>
+   [Presentation]: <https://www.youtube.com/watch?v=wIaHTRm90Wg&feature=youtu.be>
 
    [Adam Husain]: <https://github.com/medaman>
    [Nathan Bernabe]: <https://github.com/nbernabe09>
