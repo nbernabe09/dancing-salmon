@@ -34,7 +34,7 @@ Dancing Salmon uses a number of open source technologies to work effectively:
 
 # APIs
 
-Whats Wrong With Me App uses a number of open source APIs to access information for use with the application:
+Dancing Salmon uses a number of open source APIs to access information for use with the application:
 
 * [Discogs] - An open source repository of Music Albums and Artists
 * [Bands In Town] - An open source repository of concert schedules
