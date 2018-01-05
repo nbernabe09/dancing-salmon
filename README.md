@@ -15,8 +15,8 @@ Check it out [here].
 
 # Team Members
 
-* [Adam Husain]
 * [Nathan Bernabe]
+* [Adam Husain]
 * [Kevin Chao]
 * [Alessandro Maclaine]
 
